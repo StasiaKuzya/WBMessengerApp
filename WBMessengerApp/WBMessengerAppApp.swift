@@ -11,7 +11,11 @@ import SwiftUI
 struct WBMessengerAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WalkthroughView()
         }
     }
+}
+
+#Preview {
+    WalkthroughView()
 }

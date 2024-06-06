@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */; };
-		5A7A6F932C1071E2009E641A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6F922C1071E2009E641A /* ContentView.swift */; };
+		5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6F922C1071E2009E641A /* WalkthroughView.swift */; };
 		5A7A6F952C1071E5009E641A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A6F942C1071E5009E641A /* Assets.xcassets */; };
 		5A7A6F982C1071E5009E641A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A6F972C1071E5009E641A /* Preview Assets.xcassets */; };
+		5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA02C107EC7009E641A /* StartButtonView.swift */; };
+		5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA22C107FAA009E641A /* UserAgreementButtonView.swift */; };
+		5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA42C1083B4009E641A /* HeadlineView.swift */; };
+		5A7A6FA82C108699009E641A /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA72C108699009E641A /* VerificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBMessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerAppApp.swift; sourceTree = "<group>"; };
-		5A7A6F922C1071E2009E641A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5A7A6F922C1071E2009E641A /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		5A7A6F942C1071E5009E641A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7A6F972C1071E5009E641A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A7A6FA02C107EC7009E641A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		5A7A6FA22C107FAA009E641A /* UserAgreementButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementButtonView.swift; sourceTree = "<group>"; };
+		5A7A6FA42C1083B4009E641A /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
+		5A7A6FA72C108699009E641A /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */,
-				5A7A6F922C1071E2009E641A /* ContentView.swift */,
+				5A7A6F9E2C107953009E641A /* WalkThroughModule */,
+				5A7A6FA62C10866E009E641A /* VerificationModule */,
 				5A7A6F942C1071E5009E641A /* Assets.xcassets */,
 				5A7A6F962C1071E5009E641A /* Preview Content */,
 			);
@@ -65,6 +74,33 @@
 				5A7A6F972C1071E5009E641A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A7A6F9E2C107953009E641A /* WalkThroughModule */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A6F922C1071E2009E641A /* WalkthroughView.swift */,
+				5A7A6F9F2C107B7D009E641A /* Components */,
+			);
+			path = WalkThroughModule;
+			sourceTree = "<group>";
+		};
+		5A7A6F9F2C107B7D009E641A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A6FA42C1083B4009E641A /* HeadlineView.swift */,
+				5A7A6FA22C107FAA009E641A /* UserAgreementButtonView.swift */,
+				5A7A6FA02C107EC7009E641A /* StartButtonView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5A7A6FA62C10866E009E641A /* VerificationModule */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A6FA72C108699009E641A /* VerificationView.swift */,
+			);
+			path = VerificationModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A7A6F932C1071E2009E641A /* ContentView.swift in Sources */,
+				5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */,
+				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
+				5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */,
+				5A7A6FA82C108699009E641A /* VerificationView.swift in Sources */,
+				5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */,
 				5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
