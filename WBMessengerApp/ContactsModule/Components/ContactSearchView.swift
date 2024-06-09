@@ -19,6 +19,7 @@ struct ContactSearchView: View {
                       prompt: Text("Search")
                 .foregroundColor(.wbDisable))
         }
+        .bold()
         .padding(.vertical, 6)
         .padding(.leading, 8)
         .background(RoundedRectangle(cornerRadius: 4)

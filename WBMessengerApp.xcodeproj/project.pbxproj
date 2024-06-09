@@ -22,6 +22,7 @@
 		5A7A6FE62C147EA3009E641A /* ContactTextInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FE52C147EA3009E641A /* ContactTextInfoView.swift */; };
 		5A7A6FE82C14FF07009E641A /* ContactSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FE72C14FF06009E641A /* ContactSearchView.swift */; };
 		5A7A6FEA2C1507F6009E641A /* ContactPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FE92C1507F6009E641A /* ContactPlaceholderView.swift */; };
+		5A7A6FED2C15E0D2009E641A /* PersonalChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FEC2C15E0D2009E641A /* PersonalChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5A7A6FE52C147EA3009E641A /* ContactTextInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTextInfoView.swift; sourceTree = "<group>"; };
 		5A7A6FE72C14FF06009E641A /* ContactSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSearchView.swift; sourceTree = "<group>"; };
 		5A7A6FE92C1507F6009E641A /* ContactPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPlaceholderView.swift; sourceTree = "<group>"; };
+		5A7A6FEC2C15E0D2009E641A /* PersonalChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				5A7A6F9E2C107953009E641A /* WalkThroughModule */,
 				5A7A6FA62C10866E009E641A /* VerificationModule */,
 				5A7A6FDB2C146CC0009E641A /* ContactsModule */,
+				5A7A6FEB2C15E093009E641A /* PersonalChatModule */,
 				5A7A6F942C1071E5009E641A /* Assets.xcassets */,
 				5A7A6F962C1071E5009E641A /* Preview Content */,
 			);
@@ -133,11 +136,27 @@
 			isa = PBXGroup;
 			children = (
 				5A7A6FE72C14FF06009E641A /* ContactSearchView.swift */,
+				5A7A6FEE2C15E9D0009E641A /* ContactCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5A7A6FEB2C15E093009E641A /* PersonalChatModule */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A6FEC2C15E0D2009E641A /* PersonalChatView.swift */,
+			);
+			path = PersonalChatModule;
+			sourceTree = "<group>";
+		};
+		5A7A6FEE2C15E9D0009E641A /* ContactCell */ = {
+			isa = PBXGroup;
+			children = (
 				5A7A6FE22C147B3D009E641A /* ContantCellView.swift */,
 				5A7A6FE52C147EA3009E641A /* ContactTextInfoView.swift */,
 				5A7A6FE92C1507F6009E641A /* ContactPlaceholderView.swift */,
 			);
-			path = Components;
+			path = ContactCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A7A6FED2C15E0D2009E641A /* PersonalChatView.swift in Sources */,
 				5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */,
 				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
 				5A7A6FE32C147B3D009E641A /* ContantCellView.swift in Sources */,

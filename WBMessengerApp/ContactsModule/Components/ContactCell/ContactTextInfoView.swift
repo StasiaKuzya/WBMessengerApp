@@ -9,18 +9,24 @@ import SwiftUI
 
 struct ContactTextInfoView: View {
     var contact: Contact
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        return formatter
+    }()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(contact.firstName + " " + contact.lastName)
-                .font(.headline)
+                .font(.subheadline)
                 .bold()
                 .foregroundStyle(.wbFont)
-            Text("Last seen \(contact.lastVisit)")
-                .font(.subheadline)
+            Text(contact.isOnline ? "Online" : "Last seen \(contact.lastVisit, formatter: dateFormatter)")
+                .font(.footnote)
                 .foregroundStyle(.wbDisable)
                 .lineLimit(1)
         }
+        .padding(.top, 6)
     }
 }
 
@@ -29,7 +35,9 @@ struct ContactTextInfoView: View {
                                          firstName: "Anna",
                                          lastName: "Lisichkina",
                                          lastVisit: Date(),
-                                         imageName: "person"
+                                         imageName: "person",
+                                         isStory: false,
+                                         isOnline: false
                                         )
     )
 }

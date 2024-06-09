@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ContactsNavBarView: View {
+    @State var contactPath = [Contact]()
+    
     var body: some View {
         ZStack {
             Color.wbFontBG.ignoresSafeArea()
-            NavigationView {
-                ContactsView()
+            NavigationStack(path: $contactPath) {
+                ContactsView(contactPath: $contactPath)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
