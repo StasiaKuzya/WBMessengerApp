@@ -12,27 +12,26 @@ struct ContactsNavBarView: View {
     
     var body: some View {
         ZStack {
-            Color.wbFontBG.ignoresSafeArea()
+            Color.wbFontBG2.ignoresSafeArea()
             NavigationStack(path: $contactPath) {
                 ContactsView(contactPath: $contactPath)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                            Text("Контакты")
-                                .font(.title3)
-                                .bold()
+                            TitleNavBar(titleNavBar: "Контакты")
                                 .padding(.leading, 24)
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {
-                                //TODO: tranfer to contacts
-                            }) {
+                            NavigationLink(destination: ContactDetailView()) {
                                 Image(systemName: "plus").renderingMode(.template)
                                     .foregroundStyle(.wbFont)
                                     .bold()
                                     .padding(.trailing, 24)
                             }
                         }
+                    }
+                    .navigationDestination(for: Contact.self) { contact in
+                        PersonalChatView(contact: contact)
                     }
             }
             

@@ -25,7 +25,7 @@ struct VerificationView: View {
                 Spacer()
                 TextField("",
                           text: $number,
-                          prompt: Text("000 0000-00-00")
+                          prompt: Text("000 000-00-00")
                     .foregroundColor(.wbSecondary))
                 .padding(.vertical, 6)
                 .padding(.leading, 8)

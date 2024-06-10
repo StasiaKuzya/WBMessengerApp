@@ -72,7 +72,7 @@ struct ContantCellView: View {
             finalImage
                 .overlay(
                     Circle()
-                        .fill(Color.green)
+                        .fill(.wbGreen)
                         .frame(width: 14, height: 14)
                         .overlay(
                             Circle()

@@ -19,6 +19,7 @@ struct WalkthroughView: View {
                 Spacer()
                 UserAgreementButtonView()
                 StartButtonView(buttonText: "Начать общаться")
+                    .padding(.horizontal, 24)
                     .padding(.top, 18)
             }
             .padding(.bottom, 20)

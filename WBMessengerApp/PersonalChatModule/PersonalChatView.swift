@@ -21,18 +21,13 @@ struct PersonalChatView: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundStyle(.wbFont)
-                            .bold()
+                        BackButtonNavBar()
                     }
                     Button(action: {
                         //TODO: Chat detailization with contact
                     }) {
                         let lastNamePrefix = contact.lastName.prefix(1)
-                        Text("\(contact.firstName) \(String(lastNamePrefix)).")
-                            .foregroundStyle(.wbFont)
-                            .font(.title3)
-                            .bold()
+                        TitleNavBar(titleNavBar: "\(contact.firstName) \(String(lastNamePrefix)).")
                     }
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
