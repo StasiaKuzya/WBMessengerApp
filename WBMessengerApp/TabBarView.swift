@@ -23,41 +23,33 @@ struct TabBarView: View {
     init() {
         UITabBar.appearance().backgroundColor = .wbTab
         UITabBar.appearance().unselectedItemTintColor = .wbFont
-        UITabBar.appearance().tintColor = .wbFont
-     }
+    }
+    
     var body: some View {
         TabView(selection: $router.selectedTab) {
             ContactsNavBarView()
                 .tabItem {
-                    if router.selectedTab == .contacts {
-                    Label("Контакты", systemImage: "person.2")
-                    } else {
-                        Image(systemName: "person.2")
-                    }
+                    Image("contactsTab")
+                        .renderingMode(.template)
+                        .foregroundStyle(.wbFont)
                 }
                 .tag(Tabs.contacts)
-
+            
             Text("Чаты")
                 .tabItem {
-                    if router.selectedTab == .chats {
-                        Label("Чаты", systemImage: "bubble")
-                    } else {
-                        Image(systemName: "bubble")
-                    }
+                    Image("chatsTab")
+                        .renderingMode(.template)
+                        .foregroundStyle(.wbFont)
                 }
                 .tag(Tabs.chats)
-
+            
             Text("Другие")
                 .tabItem {
-                    if router.selectedTab == .other {
-                        Label("Ещё", systemImage: "ellipsis")
-                    } else {
-                        Image(systemName: "ellipsis")
-                    }
+                    Image(systemName: "ellipsis")
                 }
                 .tag(Tabs.other)
         }
-        .tint(.wbFont)
+        .tint(.wbDefaultPurple)
     }
 }
 

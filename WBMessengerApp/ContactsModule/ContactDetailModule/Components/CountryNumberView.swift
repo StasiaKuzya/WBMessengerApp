@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CountryNumberView: View {
+    var isNumber: Bool = false
     var body: some View {
         HStack {
             Image("flag")
@@ -17,11 +18,11 @@ struct CountryNumberView: View {
         .padding(.horizontal, 8)
         .background(RoundedRectangle(cornerRadius: 4)
             .fill(.wbFontBG))
-        .foregroundStyle(.wbSecondary)
+        .foregroundStyle(isNumber ? .wbFont : .wbSecondary)
         .bold()
     }
 }
 
 #Preview {
-    CountryNumberView()
+    CountryNumberView(isNumber: false)
 }

@@ -28,7 +28,7 @@ struct ContactDetailView: View {
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                ContactTelNumberView(number: $phoneNumber)
+                ContactTelNumberView(number: $phoneNumber, isNumber: !phoneNumber.isEmpty)
                     .padding(.top, 4)
                 Divider()
                     .background(.wbDivider)
