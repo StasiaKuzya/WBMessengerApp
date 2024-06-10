@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContactDetailCellView: View {
     @State var placeholderText: String
-    @State var contactInfo: String
+    @Binding var contactInfo: String
     
     var body: some View {
         TextField("",
@@ -25,5 +25,5 @@ struct ContactDetailCellView: View {
 }
 
 #Preview {
-    ContactDetailCellView(placeholderText: "Test0", contactInfo: "")
+    ContactDetailCellView(placeholderText: "Test0", contactInfo: .constant(""))
 }

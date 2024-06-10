@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactTelNumberView: View {
-    @State var number = ""
+    @Binding var number: String
     
     var body: some View {
         HStack {
@@ -27,5 +27,5 @@ struct ContactTelNumberView: View {
 }
 
 #Preview {
-    ContactTelNumberView()
+    ContactTelNumberView(number: .constant("909 909-99-00"))
 }

@@ -9,29 +9,36 @@ import SwiftUI
 
 struct ContactDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var twitter: String = ""
+    @State private var instagram: String = ""
+    @State private var linkedin: String = ""
+    @State private var facebook: String = ""
+    @State private var phoneNumber: String = ""
+
     var body: some View {
         ZStack {
             Color.wbFontBG2.ignoresSafeArea()
             VStack(spacing: 12) {
                 ContactDetailImageView()
-                ContactDetailCellView(placeholderText: "Имя (обязательно)", contactInfo: "")
+                ContactDetailCellView(placeholderText: "Имя (обязательно)", contactInfo: $firstName)
                     .padding(.top, 31)
-                ContactDetailCellView(placeholderText: "Фамилия (опционально)", contactInfo: "")
+                ContactDetailCellView(placeholderText: "Фамилия (опционально)", contactInfo: $lastName)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                ContactTelNumberView()
+                ContactTelNumberView(number: $phoneNumber)
                     .padding(.top, 4)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                ContactDetailCellView(placeholderText: "twitter", contactInfo: "")
+                ContactDetailCellView(placeholderText: "twitter", contactInfo: $twitter)
                     .padding(.top, 4)
-                ContactDetailCellView(placeholderText: "@instagram", contactInfo: "")
-                ContactDetailCellView(placeholderText: "linkdin", contactInfo: "")
-                ContactDetailCellView(placeholderText: "facebook/profile", contactInfo: "")
-                SaveButtonView(buttonText: "Сохранить")
+                ContactDetailCellView(placeholderText: "@instagram", contactInfo: $instagram)
+                ContactDetailCellView(placeholderText: "linkedin", contactInfo: $linkedin)
+                ContactDetailCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
+                SaveButtonView(buttonText: "Сохранить", isEnabled: !firstName.isEmpty)
                     .padding(.top, 13)
             }
             .padding(.horizontal, 24)

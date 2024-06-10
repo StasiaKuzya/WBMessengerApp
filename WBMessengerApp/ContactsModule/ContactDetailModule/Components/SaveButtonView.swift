@@ -10,6 +10,7 @@ import SwiftUI
 struct SaveButtonView: View {
     @State var buttonText: String = ""
     @State var saveContactDetailData: Bool = false
+    var isEnabled: Bool = true
     
     var body: some View {
         Button {
@@ -18,15 +19,17 @@ struct SaveButtonView: View {
             Text(buttonText)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)
+                .foregroundStyle(.wbButtonText)
                 .background(RoundedRectangle(cornerRadius: 30)
                     .fill(.wbDefaultPurple))
-                .foregroundStyle(.wbButtonText)
+                .opacity(isEnabled ? 1 : 0.5)
                 .font(.subheadline)
                 .bold()
         }
+        .disabled(!isEnabled)
     }
 }
 
 #Preview {
-    SaveButtonView(buttonText: "Test", saveContactDetailData: false)
+    SaveButtonView(buttonText: "Save", saveContactDetailData: false, isEnabled: false)
 }
