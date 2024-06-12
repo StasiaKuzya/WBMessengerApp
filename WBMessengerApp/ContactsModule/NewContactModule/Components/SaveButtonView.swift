@@ -1,35 +1,35 @@
 //
-//  StartButtonView.swift
+//  SaveButtonView.swift
 //  WBMessengerApp
 //
-//  Created by Анастасия on 05.06.2024.
+//  Created by Анастасия on 10.06.2024.
 //
 
 import SwiftUI
 
-struct StartButtonView: View {
+struct SaveButtonView: View {
     @State var buttonText: String = ""
-    @State var showModalScreen: Bool = false
+    @State var saveContactDetailData: Bool = false
+    var isEnabled: Bool = true
     
     var body: some View {
         Button {
-            showModalScreen.toggle()
+            saveContactDetailData.toggle()
         } label: {
             Text(buttonText)
                 .padding(.vertical, 16)
                 .frame(maxWidth: .infinity)
+                .foregroundStyle(.wbButtonText)
                 .background(RoundedRectangle(cornerRadius: 30)
                     .fill(.wbDefaultPurple))
-                .foregroundStyle(.wbButtonText)
+                .opacity(isEnabled ? 1 : 0.5)
                 .font(.headline)
                 .bold()
         }
-        .sheet(isPresented: $showModalScreen, content: {
-            VerificationView()
-        })
+        .disabled(!isEnabled)
     }
 }
 
 #Preview {
-    StartButtonView(buttonText: "Тест")
+    SaveButtonView(buttonText: "Save", saveContactDetailData: false, isEnabled: false)
 }
