@@ -22,7 +22,7 @@ struct ContactsNavBarView: View {
                                 .padding(.leading, 24)
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            NavigationLink(destination: ContactDetailView()) {
+                            NavigationLink(destination: NewContactView()) {
                                 Image(systemName: "plus").renderingMode(.template)
                                     .foregroundStyle(.wbFont)
                                     .bold()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContactDetailCellView: View {
+struct NewContactCellView: View {
     @State var placeholderText: String
     @Binding var contactInfo: String
     
@@ -26,5 +26,5 @@ struct ContactDetailCellView: View {
 }
 
 #Preview {
-    ContactDetailCellView(placeholderText: "Test0", contactInfo: .constant(""))
+    NewContactCellView(placeholderText: "Test0", contactInfo: .constant(""))
 }

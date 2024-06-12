@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContactDetailView: View {
+struct NewContactView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var firstName: String = ""
     @State private var lastName: String = ""
@@ -22,9 +22,9 @@ struct ContactDetailView: View {
             Color.wbFontBG2.ignoresSafeArea()
             VStack(spacing: 12) {
                 ContactDetailImageView()
-                ContactDetailCellView(placeholderText: "Имя (обязательно)", contactInfo: $firstName)
+                NewContactCellView(placeholderText: "Имя (обязательно)", contactInfo: $firstName)
                     .padding(.top, 31)
-                ContactDetailCellView(placeholderText: "Фамилия (опционально)", contactInfo: $lastName)
+                NewContactCellView(placeholderText: "Фамилия (опционально)", contactInfo: $lastName)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
@@ -33,11 +33,11 @@ struct ContactDetailView: View {
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                ContactDetailCellView(placeholderText: "twitter", contactInfo: $twitter)
+                NewContactCellView(placeholderText: "twitter", contactInfo: $twitter)
                     .padding(.top, 4)
-                ContactDetailCellView(placeholderText: "@instagram", contactInfo: $instagram)
-                ContactDetailCellView(placeholderText: "linkedin", contactInfo: $linkedin)
-                ContactDetailCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
+                NewContactCellView(placeholderText: "@instagram", contactInfo: $instagram)
+                NewContactCellView(placeholderText: "linkedin", contactInfo: $linkedin)
+                NewContactCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
                 SaveButtonView(buttonText: "Сохранить", isEnabled: !firstName.isEmpty)
                     .padding(.top, 13)
             }
@@ -59,5 +59,5 @@ struct ContactDetailView: View {
 }
 
 #Preview {
-    ContactDetailView()
+    NewContactView()
 }
