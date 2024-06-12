@@ -31,6 +31,7 @@
 		5A7A6FFC2C17820E009E641A /* ContactDetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FFB2C17820E009E641A /* ContactDetailImageView.swift */; };
 		5A7A6FFF2C178980009E641A /* TitleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FFE2C17897F009E641A /* TitleNavBar.swift */; };
 		5A7A70012C178990009E641A /* BackButtonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70002C178990009E641A /* BackButtonNavBar.swift */; };
+		5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70032C18AD42009E641A /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		5A7A6FFB2C17820E009E641A /* ContactDetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailImageView.swift; sourceTree = "<group>"; };
 		5A7A6FFE2C17897F009E641A /* TitleNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavBar.swift; sourceTree = "<group>"; };
 		5A7A70002C178990009E641A /* BackButtonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonNavBar.swift; sourceTree = "<group>"; };
+		5A7A70032C18AD42009E641A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */,
 				5A7A6FDC2C146D06009E641A /* TabBarView.swift */,
 				5A7A6FFD2C17895B009E641A /* CustomNavBar */,
+				5A7A70052C18AE3F009E641A /* Utilities */,
 				5A7A6F9E2C107953009E641A /* WalkThroughModule */,
 				5A7A6FA62C10866E009E641A /* VerificationModule */,
 				5A7A6FDB2C146CC0009E641A /* ContactsModule */,
@@ -215,6 +218,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5A7A70052C18AE3F009E641A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A70032C18AD42009E641A /* ImagePicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -298,6 +309,7 @@
 				5A7A6FF62C177D4A009E641A /* SaveButtonView.swift in Sources */,
 				5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */,
 				5A7A6FE62C147EA3009E641A /* ContactTextInfoView.swift in Sources */,
+				5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */,
 				5A7A6FF22C177A25009E641A /* ContactDetailView.swift in Sources */,
 				5A7A6FF82C177E90009E641A /* ContactTelNumberView.swift in Sources */,
 				5A7A6FE12C147A8E009E641A /* ContactsView.swift in Sources */,

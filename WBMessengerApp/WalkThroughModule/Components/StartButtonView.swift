@@ -16,12 +16,12 @@ struct StartButtonView: View {
             showModalScreen.toggle()
         } label: {
             Text(buttonText)
-                .padding(.vertical, 12)
+                .padding(.vertical, 16)
                 .frame(maxWidth: .infinity)
                 .background(RoundedRectangle(cornerRadius: 30)
                     .fill(.wbDefaultPurple))
                 .foregroundStyle(.wbButtonText)
-                .font(.subheadline)
+                .font(.headline)
                 .bold()
         }
         .sheet(isPresented: $showModalScreen, content: {

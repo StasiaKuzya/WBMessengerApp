@@ -17,6 +17,7 @@ struct ContactDetailCellView: View {
                   prompt: Text(placeholderText)
             .foregroundColor(.wbSecondary))
         .bold()
+        .font(.subheadline)
         .padding(.vertical, 6)
         .padding(.leading, 8)
         .background(RoundedRectangle(cornerRadius: 4)

@@ -13,6 +13,11 @@ enum Tabs: Hashable {
     case other
 }
 
+enum TabImage {
+    case asset(String)
+    case system(String)
+}
+
 final class Router: ObservableObject {
     @Published var selectedTab: Tabs = .contacts
 }
@@ -21,35 +26,40 @@ struct TabBarView: View {
     @StateObject var router: Router = .init()
     
     init() {
-        UITabBar.appearance().backgroundColor = .wbTab
-        UITabBar.appearance().unselectedItemTintColor = .wbFont
+        configureTabBarAppearance()
     }
     
     var body: some View {
         TabView(selection: $router.selectedTab) {
-            ContactsNavBarView()
-                .tabItem {
-                    Image("contactsTab")
-                        .renderingMode(.template)
-                        .foregroundStyle(.wbFont)
-                }
-                .tag(Tabs.contacts)
-            
-            Text("Чаты")
-                .tabItem {
-                    Image("chatsTab")
-                        .renderingMode(.template)
-                        .foregroundStyle(.wbFont)
-                }
-                .tag(Tabs.chats)
-            
-            Text("Другие")
-                .tabItem {
-                    Image(systemName: "ellipsis")
-                }
-                .tag(Tabs.other)
+            tabView(for: .contacts, view: ContactsNavBarView(), image: .asset("contactsTab"))
+            tabView(for: .chats, view: Text("Чаты"), image: .asset("chatsTab"))
+            tabView(for: .other, view: Text("Другие"), image: .system("ellipsis"))
         }
         .tint(.wbDefaultPurple)
+        .environmentObject(router)
+    }
+    
+    private func tabView<Content: View>(for tab: Tabs, view: Content, image: TabImage) -> some View {
+        view
+            .tabItem {
+                switch image {
+                case .asset(let imageName):
+                    Image(imageName)
+                        .renderingMode(.template)
+                        .foregroundStyle(.wbFont)
+                case .system(let systemName):
+                    Image(systemName: systemName)
+                        .renderingMode(.template)
+                        .foregroundStyle(.wbFont)
+                }
+            }
+            .tag(tab)
+    }
+    
+    private func configureTabBarAppearance() {
+        let tabBarAppearance = UITabBar.appearance()
+        tabBarAppearance.backgroundColor = .wbTab
+        tabBarAppearance.unselectedItemTintColor = .wbFont
     }
 }
 
