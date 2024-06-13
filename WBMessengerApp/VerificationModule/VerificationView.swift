@@ -10,6 +10,7 @@ import SwiftUI
 struct VerificationView: View {
     @State var number = ""
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         ZStack {
@@ -32,7 +33,21 @@ struct VerificationView: View {
                 .background(RoundedRectangle(cornerRadius: 4)
                     .fill(.wbFontBG))
                 Spacer()
+                Button {
+                    appState.isWalkthroughCompleted = true
+                    UserDefaults.standard.set(true, forKey: "walkthroughCompleted")
+                } label: {
+                    Text("Войти")
+                        .padding(.vertical, 16)
+                        .frame(maxWidth: .infinity)
+                        .background(RoundedRectangle(cornerRadius: 30)
+                            .fill(.wbDefaultPurple))
+                        .foregroundStyle(.wbButtonText)
+                        .font(.headline)
+                        .bold()
+                }
             }
+            .padding(.horizontal, 24)
         }
     }
 }
