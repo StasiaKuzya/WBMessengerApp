@@ -11,21 +11,24 @@ import AppIntents
 
 struct Provider: AppIntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationAppIntent())
+        SimpleEntry(date: Date(), contactCount: 0, lastExitDate: nil, configuration: ConfigurationAppIntent())
     }
 
     func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: configuration)
+        let count = DataManager.shared.loadContactCount()
+        let lastExitDate = DataManager.shared.loadLastExitDate()
+        return SimpleEntry(date: Date(), contactCount: count, lastExitDate: lastExitDate, configuration: configuration)
     }
-    
+
     func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
         var entries: [SimpleEntry] = []
 
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let count = DataManager.shared.loadContactCount()
+            let lastExitDate = DataManager.shared.loadLastExitDate()
+            let entry = SimpleEntry(date: entryDate, contactCount: count, lastExitDate: lastExitDate, configuration: configuration)
             entries.append(entry)
         }
 
@@ -35,6 +38,8 @@ struct Provider: AppIntentTimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let contactCount: Int
+    let lastExitDate: Date?
     let configuration: ConfigurationAppIntent
 }
 
@@ -43,33 +48,64 @@ struct WBMessengerWidgetEntryView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(spacing: 2) {
+            HStack(spacing: 4) {
                 Image(systemName: "bubble.left.and.bubble.right.fill")
-                Text("Unwriten")
+                Text("Unread")
+                Spacer()
             }
-            .font(.subheadline)
+            .font(.title3)
             .bold()
             .padding(.bottom, 8)
             
-            Text("3 chats")
-                .font(.caption)
-                .bold()
-            
+            if entry.contactCount == 0 {
+                //TODO: change on number of chats
+                Text("No contacts")
+                    .font(.subheadline)
+                    .bold()
+            } else {
+                //TODO: change on number of chats
+                Text("\(entry.contactCount) contacts")
+                    .font(.subheadline)
+                    .bold()
+            }
+        
             Spacer()
-            Text("**Last Update:** \nYou were online 3 hours ago")
+            if let lastExitDate = entry.lastExitDate {
+                Text("**Last Update:** \nYou were online \(formattedDate(lastExitDate))")
                     .font(.caption2)
+            } else {
+                Text("**Last Update:** \nUnknown")
+                    .font(.caption2)
+            }
         }
         .foregroundStyle(.white)
-        .padding()
-        .containerBackground(for: .widget){
-            Color.widgetBackground
-        }
         .background(RoundedRectangle(cornerRadius: 16)
             .fill(LinearGradient(
-                gradient: Gradient(colors: [.wbDefaultPurple, .wbGradientDarkPurple]),
+                gradient: Gradient(colors: [.wbDefaultPurple,
+                                            .wbGradientDarkPurple,
+                                            .wbDarkPurple
+                                           ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
-            )))        
+            ))
+                .padding(-20)
+        )
+    }
+    
+    private func formattedDate(_ date: Date) -> String {
+        let calendar = Calendar.current
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let timeString = dateFormatter.string(from: date)
+        
+        if calendar.isDateInToday(date) {
+            return "today at \(timeString)"
+        } else if calendar.isDateInYesterday(date) {
+            return "yesterday at \(timeString)"
+        } else {
+            dateFormatter.dateFormat = "dd MMMM 'at' HH:mm"
+            return "\(dateFormatter.string(from: date))"
+        }
     }
 }
 
@@ -81,40 +117,28 @@ struct WBMessengerWidget: Widget {
             WBMessengerWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-    }
-}
-
-extension ConfigurationAppIntent {
-    fileprivate static var smiley: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "💬"
-        return intent
-    }
-    
-    fileprivate static var starEyes: ConfigurationAppIntent {
-        let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "💬"
-        return intent
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 #Preview(as: .systemSmall) {
     WBMessengerWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(
+        date: .now,
+        contactCount: 4,
+        lastExitDate: Calendar.current.date(byAdding: .day, value: -1, to: Date()), //change value
+        configuration: ConfigurationAppIntent())
+    SimpleEntry(
+        date: .now,
+        contactCount: 0,
+        lastExitDate: nil,
+        configuration: ConfigurationAppIntent())
 }
 
 #Preview(as: .systemMedium) {
     WBMessengerWidget()
 } timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
-}
-
-#Preview(as: .systemLarge) {
-    WBMessengerWidget()
-} timeline: {
-    SimpleEntry(date: .now, configuration: .smiley)
-    SimpleEntry(date: .now, configuration: .starEyes)
+    SimpleEntry(date: .now, contactCount: 4, lastExitDate: nil, configuration: ConfigurationAppIntent())
+    SimpleEntry(date: .now, contactCount: 0, lastExitDate: nil, configuration: ConfigurationAppIntent())
 }

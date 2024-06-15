@@ -14,7 +14,8 @@ struct ContactsView: View {
         .init(id: 1, firstName: "John", lastName: "Doe", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false),
         .init(id: 2, firstName: "Jane", lastName: "Smith", lastVisit: Date(), imageName: nil, isStory: false, isOnline: true),
         .init(id: 3, firstName: "Janetta", lastName: "Tsmithova", lastVisit: Date(), imageName: nil, isStory: true, isOnline: false),
-        .init(id: 4, firstName: "Alice", lastName: "Johnson", lastVisit: Date(), imageName: nil, isStory: true, isOnline: true)
+        .init(id: 4, firstName: "Alice", lastName: "Johnson", lastVisit: Date(), imageName: nil, isStory: true, isOnline: true),
+        .init(id: 5, firstName: "Alex", lastName: "John", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false)
     ]
     
     var filteredContacts: [Contact] {
@@ -26,6 +27,11 @@ struct ContactsView: View {
                 contact.lastName.lowercased().contains(contactSearch.lowercased())
             }
         }
+    }
+    
+    init(contactPath: Binding<[Contact]>) {
+        self._contactPath = contactPath
+        DataManager.shared.saveContactCount(contacts.count)
     }
     
     var body: some View {

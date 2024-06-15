@@ -12,6 +12,7 @@ struct WBMessengerAppApp: App {
     @StateObject private var appState = AppState()
     @StateObject private var router = Router()
     @AppStorage("walkthrough") var walkthrough: Bool = false
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
@@ -30,12 +31,25 @@ struct WBMessengerAppApp: App {
                     }
             }
         }
+        .onChange(of: scenePhase) { oldValue, newValue in
+            if newValue == .background {
+                DataManager.shared.saveLastExitDate(Date())
+            }
+        }
     }
 }
 
 final class AppState: ObservableObject {
     @Published var selectedChatID: String?
-    @Published var isWalkthroughCompleted: Bool = UserDefaults.standard.bool(forKey: "walkthroughCompleted")
+    @Published var isWalkthroughCompleted: Bool = false {
+         didSet {
+             UserDefaults(suiteName: "group.com.yourcompany.messenger")?.set(isWalkthroughCompleted, forKey: "isWalkthroughCompleted")
+         }
+     }
+     
+     init() {
+         self.isWalkthroughCompleted = UserDefaults(suiteName: "group.com.yourcompany.messenger")?.bool(forKey: "isWalkthroughCompleted") ?? false
+     }
     
     func handle(url: URL) {
         print("Handling URL: \(url)")
@@ -54,14 +68,10 @@ final class AppState: ObservableObject {
     }
 }
 
-//struct WBMessengerAppApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            WalkthroughView()
-//        }
-//    }
-//}
-
 #Preview {
     WalkthroughView()
+}
+
+#Preview {
+    TabBarView()
 }

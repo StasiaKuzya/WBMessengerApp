@@ -40,6 +40,8 @@
 		5A7A70402C19C864009E641A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A703F2C19C864009E641A /* AppIntent.swift */; };
 		5A7A70422C19C867009E641A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A70412C19C867009E641A /* Assets.xcassets */; };
 		5A7A70462C19C867009E641A /* WBMessengerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70512C1BEE61009E641A /* DataManager.swift */; };
+		5A7A70532C1BEE79009E641A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70512C1BEE61009E641A /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,9 @@
 		5A7A70412C19C867009E641A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7A70432C19C867009E641A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A7A704D2C19CF93009E641A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A7A704F2C1BEA35009E641A /* WBMessengerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBMessengerApp.entitlements; sourceTree = "<group>"; };
+		5A7A70502C1BEA7B009E641A /* WBMessengerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBMessengerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		5A7A70512C1BEE61009E641A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +133,7 @@
 		5A7A6F842C1071E2009E641A = {
 			isa = PBXGroup;
 			children = (
+				5A7A70502C1BEA7B009E641A /* WBMessengerWidgetExtension.entitlements */,
 				5A7A6F8F2C1071E2009E641A /* WBMessengerApp */,
 				5A7A70382C19C864009E641A /* WBMessengerWidget */,
 				5A7A70332C19C864009E641A /* Frameworks */,
@@ -147,9 +153,11 @@
 		5A7A6F8F2C1071E2009E641A /* WBMessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A7A704F2C1BEA35009E641A /* WBMessengerApp.entitlements */,
 				5A7A704D2C19CF93009E641A /* Info.plist */,
 				5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */,
 				5A7A6FDC2C146D06009E641A /* TabBarView.swift */,
+				5A7A70542C1D9435009E641A /* AppGroup */,
 				5A7A6FFD2C17895B009E641A /* CustomNavBar */,
 				5A7A70052C18AE3F009E641A /* Utilities */,
 				5A7A6F9E2C107953009E641A /* WalkThroughModule */,
@@ -303,6 +311,14 @@
 			path = WBMessengerWidget;
 			sourceTree = "<group>";
 		};
+		5A7A70542C1D9435009E641A /* AppGroup */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A70512C1BEE61009E641A /* DataManager.swift */,
+			);
+			path = AppGroup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7A6FF42C177A79009E641A /* NewContactCellView.swift in Sources */,
+				5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */,
 				5A7A6FED2C15E0D2009E641A /* PersonalChatView.swift in Sources */,
 				5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */,
 				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
@@ -435,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7A703E2C19C864009E641A /* WBMessengerWidget.swift in Sources */,
+				5A7A70532C1BEE79009E641A /* DataManager.swift in Sources */,
 				5A7A70402C19C864009E641A /* AppIntent.swift in Sources */,
 				5A7A703A2C19C864009E641A /* WBMessengerWidgetBundle.swift in Sources */,
 				5A7A703C2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift in Sources */,
@@ -577,6 +595,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerApp/WBMessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBMessengerApp/Preview Content\"";
@@ -608,6 +627,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerApp/WBMessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBMessengerApp/Preview Content\"";
@@ -638,6 +658,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YFKSG45UC4;
@@ -665,6 +686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YFKSG45UC4;
