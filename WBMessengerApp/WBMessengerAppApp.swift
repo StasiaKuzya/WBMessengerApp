@@ -9,15 +9,21 @@ import SwiftUI
 
 @main
 struct WBMessengerAppApp: App {
-    @StateObject private var appState = AppState()
-    @StateObject private var router = Router()
+    @StateObject private var appState: AppState
+    @StateObject private var router: Router = .init()
     @AppStorage("walkthrough") var walkthrough: Bool = false
     @Environment(\.scenePhase) private var scenePhase
+    
+    init() {
+        let router = Router()
+        _router = StateObject(wrappedValue: router)
+        _appState = StateObject(wrappedValue: AppState(router: router))
+    }
     
     var body: some Scene {
         WindowGroup {
             if appState.isWalkthroughCompleted {
-                TabBarView()
+                TabBarView(router: router)
                     .environmentObject(appState)
                     .environmentObject(router)
                     .onOpenURL { url in
@@ -39,39 +45,10 @@ struct WBMessengerAppApp: App {
     }
 }
 
-final class AppState: ObservableObject {
-    @Published var selectedChatID: String?
-    @Published var isWalkthroughCompleted: Bool = false {
-         didSet {
-             UserDefaults(suiteName: "group.com.yourcompany.messenger")?.set(isWalkthroughCompleted, forKey: "isWalkthroughCompleted")
-         }
-     }
-     
-     init() {
-         self.isWalkthroughCompleted = UserDefaults(suiteName: "group.com.yourcompany.messenger")?.bool(forKey: "isWalkthroughCompleted") ?? false
-     }
-    
-    func handle(url: URL) {
-        print("Handling URL: \(url)")
-        guard url.scheme == "mymessenger", url.host == "chat" else {
-            print("Invalid URL scheme or host")
-            return
-        }
-        
-        guard let id = url.pathComponents.last else {
-            print("No chat ID found in URL")
-            return
-        }
-        
-        print("Selected chat ID: \(id)")
-        selectedChatID = id
-    }
-}
-
 #Preview {
     WalkthroughView()
 }
 
 #Preview {
-    TabBarView()
+    TabBarView(router: Router.init())
 }

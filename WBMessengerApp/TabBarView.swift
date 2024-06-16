@@ -23,9 +23,10 @@ final class Router: ObservableObject {
 }
 
 struct TabBarView: View {
-    @StateObject var router: Router = .init()
+    @ObservedObject var router: Router
     
-    init() {
+    init(router: Router) {
+        self.router = router
         configureTabBarAppearance()
     }
     
@@ -64,5 +65,5 @@ struct TabBarView: View {
 }
 
 #Preview {
-    TabBarView()
+    TabBarView(router: Router.init())
 }

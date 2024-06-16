@@ -90,6 +90,7 @@ struct WBMessengerWidgetEntryView : View {
             ))
                 .padding(-20)
         )
+        .widgetURL(URL(string: "mymessenger://chats"))
     }
     
     private func formattedDate(_ date: Date) -> String {
