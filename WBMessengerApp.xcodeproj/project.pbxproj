@@ -32,7 +32,43 @@
 		5A7A6FFF2C178980009E641A /* TitleNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FFE2C17897F009E641A /* TitleNavBar.swift */; };
 		5A7A70012C178990009E641A /* BackButtonNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70002C178990009E641A /* BackButtonNavBar.swift */; };
 		5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70032C18AD42009E641A /* ImagePicker.swift */; };
+		5A7A70352C19C864009E641A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A70342C19C864009E641A /* WidgetKit.framework */; };
+		5A7A70372C19C864009E641A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A7A70362C19C864009E641A /* SwiftUI.framework */; };
+		5A7A703A2C19C864009E641A /* WBMessengerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70392C19C864009E641A /* WBMessengerWidgetBundle.swift */; };
+		5A7A703C2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A703B2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift */; };
+		5A7A703E2C19C864009E641A /* WBMessengerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A703D2C19C864009E641A /* WBMessengerWidget.swift */; };
+		5A7A70402C19C864009E641A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A703F2C19C864009E641A /* AppIntent.swift */; };
+		5A7A70422C19C867009E641A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A70412C19C867009E641A /* Assets.xcassets */; };
+		5A7A70462C19C867009E641A /* WBMessengerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70512C1BEE61009E641A /* DataManager.swift */; };
+		5A7A70532C1BEE79009E641A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70512C1BEE61009E641A /* DataManager.swift */; };
+		5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */; };
+		5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA952C1F2A6400F583EE /* AppState.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A7A70442C19C867009E641A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A7A6F852C1071E2009E641A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A7A70312C19C864009E641A;
+			remoteInfo = WBMessengerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5A7A704A2C19C867009E641A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A7A70462C19C867009E641A /* WBMessengerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBMessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +97,21 @@
 		5A7A6FFE2C17897F009E641A /* TitleNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavBar.swift; sourceTree = "<group>"; };
 		5A7A70002C178990009E641A /* BackButtonNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonNavBar.swift; sourceTree = "<group>"; };
 		5A7A70032C18AD42009E641A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WBMessengerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7A70342C19C864009E641A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5A7A70362C19C864009E641A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5A7A70392C19C864009E641A /* WBMessengerWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerWidgetBundle.swift; sourceTree = "<group>"; };
+		5A7A703B2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		5A7A703D2C19C864009E641A /* WBMessengerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerWidget.swift; sourceTree = "<group>"; };
+		5A7A703F2C19C864009E641A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		5A7A70412C19C867009E641A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A7A70432C19C867009E641A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A7A704D2C19CF93009E641A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5A7A704F2C1BEA35009E641A /* WBMessengerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBMessengerApp.entitlements; sourceTree = "<group>"; };
+		5A7A70502C1BEA7B009E641A /* WBMessengerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WBMessengerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		5A7A70512C1BEE61009E641A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatIntent.swift; sourceTree = "<group>"; };
+		5ACBAA952C1F2A6400F583EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,13 +122,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A7A702F2C19C864009E641A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7A70372C19C864009E641A /* SwiftUI.framework in Frameworks */,
+				5A7A70352C19C864009E641A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		5A7A6F842C1071E2009E641A = {
 			isa = PBXGroup;
 			children = (
+				5A7A70502C1BEA7B009E641A /* WBMessengerWidgetExtension.entitlements */,
 				5A7A6F8F2C1071E2009E641A /* WBMessengerApp */,
+				5A7A70382C19C864009E641A /* WBMessengerWidget */,
+				5A7A70332C19C864009E641A /* Frameworks */,
 				5A7A6F8E2C1071E2009E641A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */,
+				5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,8 +157,13 @@
 		5A7A6F8F2C1071E2009E641A /* WBMessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A7A704F2C1BEA35009E641A /* WBMessengerApp.entitlements */,
+				5A7A704D2C19CF93009E641A /* Info.plist */,
 				5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */,
 				5A7A6FDC2C146D06009E641A /* TabBarView.swift */,
+				5ACBAA952C1F2A6400F583EE /* AppState.swift */,
+				5A7A70542C1D9435009E641A /* AppGroup */,
+				5ACBAA922C1F2A0B00F583EE /* AppIntents */,
 				5A7A6FFD2C17895B009E641A /* CustomNavBar */,
 				5A7A70052C18AE3F009E641A /* Utilities */,
 				5A7A6F9E2C107953009E641A /* WalkThroughModule */,
@@ -226,6 +295,44 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5A7A70332C19C864009E641A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A70342C19C864009E641A /* WidgetKit.framework */,
+				5A7A70362C19C864009E641A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A7A70382C19C864009E641A /* WBMessengerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A70392C19C864009E641A /* WBMessengerWidgetBundle.swift */,
+				5A7A703B2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift */,
+				5A7A703D2C19C864009E641A /* WBMessengerWidget.swift */,
+				5A7A703F2C19C864009E641A /* AppIntent.swift */,
+				5A7A70412C19C867009E641A /* Assets.xcassets */,
+				5A7A70432C19C867009E641A /* Info.plist */,
+			);
+			path = WBMessengerWidget;
+			sourceTree = "<group>";
+		};
+		5A7A70542C1D9435009E641A /* AppGroup */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A70512C1BEE61009E641A /* DataManager.swift */,
+			);
+			path = AppGroup;
+			sourceTree = "<group>";
+		};
+		5ACBAA922C1F2A0B00F583EE /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -236,15 +343,34 @@
 				5A7A6F892C1071E2009E641A /* Sources */,
 				5A7A6F8A2C1071E2009E641A /* Frameworks */,
 				5A7A6F8B2C1071E2009E641A /* Resources */,
+				5A7A704A2C19C867009E641A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A7A70452C19C867009E641A /* PBXTargetDependency */,
 			);
 			name = WBMessengerApp;
 			productName = WBMessengerApp;
 			productReference = 5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5A7A70312C19C864009E641A /* WBMessengerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A7A70472C19C867009E641A /* Build configuration list for PBXNativeTarget "WBMessengerWidgetExtension" */;
+			buildPhases = (
+				5A7A702E2C19C864009E641A /* Sources */,
+				5A7A702F2C19C864009E641A /* Frameworks */,
+				5A7A70302C19C864009E641A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WBMessengerWidgetExtension;
+			productName = WBMessengerWidgetExtension;
+			productReference = 5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -257,6 +383,9 @@
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					5A7A6F8C2C1071E2009E641A = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					5A7A70312C19C864009E641A = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -275,6 +404,7 @@
 			projectRoot = "";
 			targets = (
 				5A7A6F8C2C1071E2009E641A /* WBMessengerApp */,
+				5A7A70312C19C864009E641A /* WBMessengerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +419,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A7A70302C19C864009E641A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7A70422C19C867009E641A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7A6FF42C177A79009E641A /* NewContactCellView.swift in Sources */,
+				5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */,
 				5A7A6FED2C15E0D2009E641A /* PersonalChatView.swift in Sources */,
 				5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */,
 				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
@@ -309,6 +448,7 @@
 				5A7A6FF62C177D4A009E641A /* SaveButtonView.swift in Sources */,
 				5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */,
 				5A7A6FE62C147EA3009E641A /* ContactTextInfoView.swift in Sources */,
+				5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */,
 				5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */,
 				5A7A6FF22C177A25009E641A /* NewContactView.swift in Sources */,
 				5A7A6FF82C177E90009E641A /* ContactTelNumberView.swift in Sources */,
@@ -317,12 +457,33 @@
 				5A7A6FFC2C17820E009E641A /* ContactDetailImageView.swift in Sources */,
 				5A7A6FEA2C1507F6009E641A /* ContactPlaceholderView.swift in Sources */,
 				5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */,
+				5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */,
 				5A7A70012C178990009E641A /* BackButtonNavBar.swift in Sources */,
 				5A7A6FE82C14FF07009E641A /* ContactSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A7A702E2C19C864009E641A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7A703E2C19C864009E641A /* WBMessengerWidget.swift in Sources */,
+				5A7A70532C1BEE79009E641A /* DataManager.swift in Sources */,
+				5A7A70402C19C864009E641A /* AppIntent.swift in Sources */,
+				5A7A703A2C19C864009E641A /* WBMessengerWidgetBundle.swift in Sources */,
+				5A7A703C2C19C864009E641A /* WBMessengerWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A7A70452C19C867009E641A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A7A70312C19C864009E641A /* WBMessengerWidgetExtension */;
+			targetProxy = 5A7A70442C19C867009E641A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5A7A6F992C1071E5009E641A /* Debug */ = {
@@ -447,14 +608,17 @@
 		5A7A6F9C2C1071E5009E641A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerApp/WBMessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBMessengerApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YFKSG45UC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBMessengerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,14 +640,17 @@
 		5A7A6F9D2C1071E5009E641A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerApp/WBMessengerApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WBMessengerApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YFKSG45UC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBMessengerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -496,6 +663,62 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A7A70482C19C867009E641A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YFKSG45UC4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBMessengerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WBMessengerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp.WBMessengerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A7A70492C19C867009E641A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WBMessengerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YFKSG45UC4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WBMessengerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WBMessengerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp.WBMessengerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,6 +742,15 @@
 			buildConfigurations = (
 				5A7A6F9C2C1071E5009E641A /* Debug */,
 				5A7A6F9D2C1071E5009E641A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A7A70472C19C867009E641A /* Build configuration list for PBXNativeTarget "WBMessengerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7A70482C19C867009E641A /* Debug */,
+				5A7A70492C19C867009E641A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

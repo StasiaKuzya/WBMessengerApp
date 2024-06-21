@@ -9,13 +9,46 @@ import SwiftUI
 
 @main
 struct WBMessengerAppApp: App {
+    @StateObject private var appState: AppState
+    @StateObject private var router: Router = .init()
+    @AppStorage("walkthrough") var walkthrough: Bool = false
+    @Environment(\.scenePhase) private var scenePhase
+    
+    init() {
+        let router = Router()
+        _router = StateObject(wrappedValue: router)
+        _appState = StateObject(wrappedValue: AppState(router: router))
+    }
+    
     var body: some Scene {
         WindowGroup {
-            WalkthroughView()
+            if appState.isWalkthroughCompleted {
+                TabBarView(router: router)
+                    .environmentObject(appState)
+                    .environmentObject(router)
+                    .onOpenURL { url in
+                        appState.handle(url: url)
+                    }
+            } else {
+                WalkthroughView()
+                    .environmentObject(appState)
+                    .onOpenURL { url in
+                        appState.handle(url: url)
+                    }
+            }
+        }
+        .onChange(of: scenePhase) { oldValue, newValue in
+            if newValue == .background {
+                DataManager.shared.saveLastExitDate(Date())
+            }
         }
     }
 }
 
 #Preview {
     WalkthroughView()
+}
+
+#Preview {
+    TabBarView(router: Router.init())
 }

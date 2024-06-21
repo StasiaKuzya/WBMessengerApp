@@ -23,20 +23,32 @@ final class Router: ObservableObject {
 }
 
 struct TabBarView: View {
-    @StateObject var router: Router = .init()
+    @ObservedObject var router: Router
     
-    init() {
+    init(router: Router) {
+        self.router = router
         configureTabBarAppearance()
     }
     
     var body: some View {
-        TabView(selection: $router.selectedTab) {
-            tabView(for: .contacts, view: ContactsNavBarView(), image: .asset("contactsTab"))
-            tabView(for: .chats, view: Text("Чаты"), image: .asset("chatsTab"))
-            tabView(for: .other, view: Text("Другие"), image: .system("ellipsis"))
+        ZStack {
+            TabView(selection: $router.selectedTab) {
+                tabView(for: .contacts, view: ContactsNavBarView(), image: .asset("contactsTab"))
+                tabView(for: .chats, view: Text("Чаты"), image: .asset("chatsTab"))
+                tabView(for: .other, view: Text("Другие"), image: .system("ellipsis"))
+            }
+            .tint(.wbDefaultPurple)
+            .environmentObject(router)
+            
+            VStack {
+                Spacer()
+                Rectangle()
+                    .fill(.wbTab)
+                    .frame(height: 1)
+                    .shadow(color: .black.opacity(1), radius: 14, x: 0, y: -15)
+                    .padding(.bottom, 49)
+            }
         }
-        .tint(.wbDefaultPurple)
-        .environmentObject(router)
     }
     
     private func tabView<Content: View>(for tab: Tabs, view: Content, image: TabImage) -> some View {
@@ -64,5 +76,5 @@ struct TabBarView: View {
 }
 
 #Preview {
-    TabBarView()
+    TabBarView(router: Router.init())
 }
