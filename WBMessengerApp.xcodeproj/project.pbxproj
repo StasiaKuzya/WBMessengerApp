@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3D815C2C2836F100FF9B53 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3D815B2C2836F100FF9B53 /* main.swift */; };
 		5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */; };
 		5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6F922C1071E2009E641A /* WalkthroughView.swift */; };
 		5A7A6F952C1071E5009E641A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A6F942C1071E5009E641A /* Assets.xcassets */; };
@@ -57,6 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5A3D81572C2836F100FF9B53 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		5A7A704A2C19C867009E641A /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A3D81592C2836F100FF9B53 /* BankConsoleProgram */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankConsoleProgram; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3D815B2C2836F100FF9B53 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBMessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerAppApp.swift; sourceTree = "<group>"; };
 		5A7A6F922C1071E2009E641A /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
@@ -115,6 +127,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A3D81562C2836F100FF9B53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A7A6F8A2C1071E2009E641A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,12 +153,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A3D815A2C2836F100FF9B53 /* BankConsoleProgram */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D815B2C2836F100FF9B53 /* main.swift */,
+			);
+			path = BankConsoleProgram;
+			sourceTree = "<group>";
+		};
 		5A7A6F842C1071E2009E641A = {
 			isa = PBXGroup;
 			children = (
 				5A7A70502C1BEA7B009E641A /* WBMessengerWidgetExtension.entitlements */,
 				5A7A6F8F2C1071E2009E641A /* WBMessengerApp */,
 				5A7A70382C19C864009E641A /* WBMessengerWidget */,
+				5A3D815A2C2836F100FF9B53 /* BankConsoleProgram */,
 				5A7A70332C19C864009E641A /* Frameworks */,
 				5A7A6F8E2C1071E2009E641A /* Products */,
 			);
@@ -150,6 +178,7 @@
 			children = (
 				5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */,
 				5A7A70322C19C864009E641A /* WBMessengerWidgetExtension.appex */,
+				5A3D81592C2836F100FF9B53 /* BankConsoleProgram */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,6 +365,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A3D81582C2836F100FF9B53 /* BankConsoleProgram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A3D815F2C2836F100FF9B53 /* Build configuration list for PBXNativeTarget "BankConsoleProgram" */;
+			buildPhases = (
+				5A3D81552C2836F100FF9B53 /* Sources */,
+				5A3D81562C2836F100FF9B53 /* Frameworks */,
+				5A3D81572C2836F100FF9B53 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BankConsoleProgram;
+			productName = BankConsoleProgram;
+			productReference = 5A3D81592C2836F100FF9B53 /* BankConsoleProgram */;
+			productType = "com.apple.product-type.tool";
+		};
 		5A7A6F8C2C1071E2009E641A /* WBMessengerApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A7A6F9B2C1071E5009E641A /* Build configuration list for PBXNativeTarget "WBMessengerApp" */;
@@ -382,6 +428,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					5A3D81582C2836F100FF9B53 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					5A7A6F8C2C1071E2009E641A = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -405,6 +454,7 @@
 			targets = (
 				5A7A6F8C2C1071E2009E641A /* WBMessengerApp */,
 				5A7A70312C19C864009E641A /* WBMessengerWidgetExtension */,
+				5A3D81582C2836F100FF9B53 /* BankConsoleProgram */,
 			);
 		};
 /* End PBXProject section */
@@ -430,6 +480,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A3D81552C2836F100FF9B53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A3D815C2C2836F100FF9B53 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A7A6F892C1071E2009E641A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -486,6 +544,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5A3D815D2C2836F100FF9B53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YFKSG45UC4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5A3D815E2C2836F100FF9B53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YFKSG45UC4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		5A7A6F992C1071E5009E641A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -728,6 +812,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A3D815F2C2836F100FF9B53 /* Build configuration list for PBXNativeTarget "BankConsoleProgram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A3D815D2C2836F100FF9B53 /* Debug */,
+				5A3D815E2C2836F100FF9B53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A7A6F882C1071E2009E641A /* Build configuration list for PBXProject "WBMessengerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
