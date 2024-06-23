@@ -83,6 +83,7 @@
 /* Begin PBXFileReference section */
 		5A3D81592C2836F100FF9B53 /* BankConsoleProgram */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BankConsoleProgram; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3D815B2C2836F100FF9B53 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5A3D81612C28441F00FF9B53 /* HeapStackMemoryPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HeapStackMemoryPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBMessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7A6F902C1071E2009E641A /* WBMessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBMessengerAppApp.swift; sourceTree = "<group>"; };
 		5A7A6F922C1071E2009E641A /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
@@ -161,6 +162,14 @@
 			path = BankConsoleProgram;
 			sourceTree = "<group>";
 		};
+		5A3D81632C284E2300FF9B53 /* HeapStackMemory */ = {
+			isa = PBXGroup;
+			children = (
+				5A3D81612C28441F00FF9B53 /* HeapStackMemoryPG.playground */,
+			);
+			path = HeapStackMemory;
+			sourceTree = "<group>";
+		};
 		5A7A6F842C1071E2009E641A = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +177,7 @@
 				5A7A6F8F2C1071E2009E641A /* WBMessengerApp */,
 				5A7A70382C19C864009E641A /* WBMessengerWidget */,
 				5A3D815A2C2836F100FF9B53 /* BankConsoleProgram */,
+				5A3D81632C284E2300FF9B53 /* HeapStackMemory */,
 				5A7A70332C19C864009E641A /* Frameworks */,
 				5A7A6F8E2C1071E2009E641A /* Products */,
 			);
@@ -713,7 +723,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerAppSUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -745,7 +755,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerAppSUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -772,7 +782,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp.WBMessengerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerAppSUI.WBMessengerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -800,7 +810,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerApp.WBMessengerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.StasiaKuzya.WBMessengerAppSUI.WBMessengerWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
