@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WBMessengerApp
+
+  Created by Анастасия on 24.06.2024.
+  
+*/
+"select_date_and_see" = "Выбери дату и удивись";
+"select_date" = "Выбери дату";
+"use_spell_out" = "Используй написную версию дат";
