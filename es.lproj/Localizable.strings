@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WBMessengerApp
+
+  Created by Анастасия on 24.06.2024.
+  
+*/
+"select_date_and_see" = "Selecciona la fecha y ve \nlo que has hecho";
+"select_date" = "Seleccionar fecha";
+"use_spell_out" = "Usar escribir números";
