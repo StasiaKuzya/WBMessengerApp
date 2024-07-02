@@ -48,6 +48,9 @@
 		5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA952C1F2A6400F583EE /* AppState.swift */; };
 		5ADDEF692C29898700D1D990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDEF6B2C29898700D1D990 /* Localizable.strings */; };
 		5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDEF702C298D0900D1D990 /* StringExtension.swift */; };
+		5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */; };
+		5ADDF03E2C344EF200D1D990 /* EmojiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03D2C344EF200D1D990 /* EmojiCellView.swift */; };
+		5ADDF0402C344F0400D1D990 /* EndlessScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03F2C344F0400D1D990 /* EndlessScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,9 @@
 		5ADDEF6E2C298BFD00D1D990 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6F2C298C0F00D1D990 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF702C298D0900D1D990 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItem.swift; sourceTree = "<group>"; };
+		5ADDF03D2C344EF200D1D990 /* EmojiCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCellView.swift; sourceTree = "<group>"; };
+		5ADDF03F2C344F0400D1D990 /* EndlessScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,7 @@
 				5ADDEF662C29839900D1D990 /* StringInterpolation */,
 				5A7A70382C19C864009E641A /* WBMessengerWidget */,
 				5A3D815A2C2836F100FF9B53 /* BankConsoleProgram */,
+				5ADDF03A2C344EC100D1D990 /* EndlessScroll */,
 				5A3D81632C284E2300FF9B53 /* HeapStackMemory */,
 				5A7A70332C19C864009E641A /* Frameworks */,
 				5A7A6F8E2C1071E2009E641A /* Products */,
@@ -393,6 +400,16 @@
 			path = StringInterpolation;
 			sourceTree = "<group>";
 		};
+		5ADDF03A2C344EC100D1D990 /* EndlessScroll */ = {
+			isa = PBXGroup;
+			children = (
+				5ADDF03F2C344F0400D1D990 /* EndlessScrollView.swift */,
+				5ADDF03D2C344EF200D1D990 /* EmojiCellView.swift */,
+				5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */,
+			);
+			path = EndlessScroll;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -539,6 +556,7 @@
 				5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */,
 				5A7A6FFA2C177FC8009E641A /* CountryNumberView.swift in Sources */,
 				5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */,
+				5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */,
 				5A7A6FFF2C178980009E641A /* TitleNavBar.swift in Sources */,
 				5A7A6FA82C108699009E641A /* VerificationView.swift in Sources */,
 				5A7A6FF62C177D4A009E641A /* SaveButtonView.swift in Sources */,
@@ -548,11 +566,13 @@
 				5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */,
 				5A7A6FF22C177A25009E641A /* NewContactView.swift in Sources */,
 				5A7A6FF82C177E90009E641A /* ContactTelNumberView.swift in Sources */,
+				5ADDF03E2C344EF200D1D990 /* EmojiCellView.swift in Sources */,
 				5A7A6FE12C147A8E009E641A /* ContactsView.swift in Sources */,
 				5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */,
 				5A7A6FFC2C17820E009E641A /* ContactDetailImageView.swift in Sources */,
 				5A7A6FEA2C1507F6009E641A /* ContactPlaceholderView.swift in Sources */,
 				5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */,
+				5ADDF0402C344F0400D1D990 /* EndlessScrollView.swift in Sources */,
 				5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */,
 				5A7A70012C178990009E641A /* BackButtonNavBar.swift in Sources */,
 				5A7A6FE82C14FF07009E641A /* ContactSearchView.swift in Sources */,
