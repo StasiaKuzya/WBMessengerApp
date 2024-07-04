@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WalkthroughView: View {
+    @Binding var buttonTapped: Bool
+    
     var body: some View {
         ZStack {
             Color.wbMainBG.ignoresSafeArea()
@@ -18,7 +20,7 @@ struct WalkthroughView: View {
                     .padding(.top, 42)
                 Spacer()
                 UserAgreementButtonView()
-                StartButtonView(buttonText: "Начать общаться")
+                StartButtonView(buttonText: "Начать общаться", buttonTapped: $buttonTapped)
                     .padding(.horizontal, 24)
                     .padding(.top, 18)
             }
@@ -28,5 +30,5 @@ struct WalkthroughView: View {
 }
 
 #Preview {
-    WalkthroughView()
+    WalkthroughView(buttonTapped: .constant(false))
 }

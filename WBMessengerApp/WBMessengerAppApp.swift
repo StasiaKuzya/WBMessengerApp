@@ -30,7 +30,7 @@ struct WBMessengerAppApp: App {
                         appState.handle(url: url)
                     }
             } else {
-                WalkthroughView()
+                WalkthroughNavBarView()
                     .environmentObject(appState)
                     .onOpenURL { url in
                         appState.handle(url: url)
@@ -46,7 +46,7 @@ struct WBMessengerAppApp: App {
 }
 
 #Preview {
-    WalkthroughView()
+    WalkthroughNavBarView()
 }
 
 #Preview {
