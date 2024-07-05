@@ -24,14 +24,14 @@ struct VerificationView: View {
                     AnimatedProgressView()
                 } else {
                     VStack {
-                        HeadlineView(headlineText: "Введите номер телефона")
-                        CaptionView(caption: "Мы вышлем код подтверждения на указанный номер")
+                        HeadlineView(headlineText: "verification_haedline".localized())
+                        CaptionView(caption: "verification_caption".localized())
                             .padding(.top, 8)
                         
                         ContactTelNumberView(number: $phoneNumber, isNumber: !phoneNumber.isEmpty)
                             .padding(.top, 49)
                         
-                        SaveButtonView(buttonText: "Продолжить", isEnabled: phoneNumber.count == 13) {
+                        SaveButtonView(buttonText: "verification_continueButton".localized(), isEnabled: phoneNumber.count == 13) {
                             withAnimation {
                                 showProgress = true
                             }

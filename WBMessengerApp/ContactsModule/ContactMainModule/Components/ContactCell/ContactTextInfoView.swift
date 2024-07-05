@@ -21,7 +21,7 @@ struct ContactTextInfoView: View {
                 .font(.subheadline)
                 .bold()
                 .foregroundStyle(.wbFont)
-            Text(contact.isOnline ? "Online" : "Last seen \(contact.lastVisit, formatter: dateFormatter)")
+            Text(contact.isOnline ? "Online" : "\("contacts_lastSeen".localized()) \(contact.lastVisit, formatter: dateFormatter)")
                 .font(.footnote)
                 .foregroundStyle(.wbDisable)
                 .lineLimit(1)

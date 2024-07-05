@@ -8,3 +8,20 @@
 "select_date_and_see" = "Selecciona la fecha y ve \nlo que has hecho";
 "select_date" = "Seleccionar fecha";
 "use_spell_out" = "Usar escribir números";
+
+//App
+"tab_chats" = "Chats";
+"tab_other" = "Otros";
+"walkthrough_headline" = "Comunícate con tus amigos y familiares fácilmente";
+"walkthrough_startButton" = "Empezar a chatear";
+"walkthrough_userAgreement" = "Términos de Uso";
+"verification_haedline" = "Introduzca su número de Teléfono";
+"verification_caption" = "Le enviaremos un código de verificación al número especificado";
+"verification_continueButton" = "Continuar";
+"contacts_navBarTitle" = "Contactos";
+"contacts_search" = "Buscar";
+"contacts_lastSeen" = "Last seen";
+"newContact_firstName" = "Nombre (requerido)";
+"newContact_lastName" = "Apellido (opcional)";
+"newContact_saveButton" = "Guardar";
+"newContact_navBarTitle" = "Nuevo contacto";

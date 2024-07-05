@@ -16,11 +16,11 @@ struct WalkthroughView: View {
             VStack {
                 Spacer()
                 Image("walktrough")
-                HeadlineView(headlineText:  "Общайтесь с друзьями\nи близкими легко")
+                HeadlineView(headlineText: "walkthrough_headline".localized())
                     .padding(.top, 42)
                 Spacer()
                 UserAgreementButtonView()
-                StartButtonView(buttonText: "Начать общаться", buttonTapped: $buttonTapped)
+                StartButtonView(buttonText: "walkthrough_startButton".localized(), buttonTapped: $buttonTapped)
                     .padding(.horizontal, 24)
                     .padding(.top, 18)
             }
