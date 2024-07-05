@@ -10,7 +10,7 @@ import SwiftUI
 struct UserAgreementButtonView: View {
     var body: some View {
         Button {} label: {
-            Text("Пользовательское соглашение")
+            Text("walkthrough_userAgreement".localized())
                 .foregroundStyle(.wbFont)
                 .font(.caption)
                 .bold()

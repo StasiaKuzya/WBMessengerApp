@@ -34,8 +34,8 @@ struct TabBarView: View {
         ZStack {
             TabView(selection: $router.selectedTab) {
                 tabView(for: .contacts, view: ContactsNavBarView(), image: .asset("contactsTab"))
-                tabView(for: .chats, view: Text("Чаты"), image: .asset("chatsTab"))
-                tabView(for: .other, view: Text("Другие"), image: .system("ellipsis"))
+                tabView(for: .chats, view: Text("tab_chats".localized()), image: .asset("chatsTab"))
+                tabView(for: .other, view: Text("tab_other".localized()), image: .system("ellipsis"))
             }
             .tint(.wbDefaultPurple)
             .environmentObject(router)

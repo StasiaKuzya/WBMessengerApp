@@ -18,7 +18,7 @@ struct ContactsNavBarView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .navigationBarLeading) {
-                            TitleNavBar(titleNavBar: "Контакты")
+                            TitleNavBar(titleNavBar: "contacts_navBarTitle".localized())
                                 .padding(.leading, 24)
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {

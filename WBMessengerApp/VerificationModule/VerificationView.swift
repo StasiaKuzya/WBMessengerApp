@@ -11,43 +11,49 @@ struct VerificationView: View {
     @State var number = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appState: AppState
-    
+    @State private var phoneNumber: String = ""
+    @State private var showProgress = false
+
     var body: some View {
         ZStack {
             Color.wbMainBG.ignoresSafeArea()
-            VStack(alignment: .leading) {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundStyle(.wbFont)
+            VStack {
+                Spacer()
+                
+                if showProgress {
+                    AnimatedProgressView()
+                } else {
+                    VStack {
+                        HeadlineView(headlineText: "verification_haedline".localized())
+                        CaptionView(caption: "verification_caption".localized())
+                            .padding(.top, 8)
+                        
+                        ContactTelNumberView(number: $phoneNumber, isNumber: !phoneNumber.isEmpty)
+                            .padding(.top, 49)
+                        
+                        SaveButtonView(buttonText: "verification_continueButton".localized(), isEnabled: phoneNumber.count == 13) {
+                            withAnimation {
+                                showProgress = true
+                            }
+                        }
+                        .padding(.top, 69)
+                    }
+                    .transition(.scale)
+                    .padding(.horizontal, 24)
                 }
-                .padding()
+                
                 Spacer()
-                TextField("",
-                          text: $number,
-                          prompt: Text("000 000-00-00")
-                    .foregroundColor(.wbSecondary))
-                .padding(.vertical, 6)
-                .padding(.leading, 8)
-                .background(RoundedRectangle(cornerRadius: 4)
-                    .fill(.wbFontBG))
-                Spacer()
-                Button {
-                    appState.isWalkthroughCompleted = true
-                    UserDefaults.standard.set(true, forKey: "walkthroughCompleted")
-                } label: {
-                    Text("Войти")
-                        .padding(.vertical, 16)
-                        .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 30)
-                            .fill(.wbDefaultPurple))
-                        .foregroundStyle(.wbButtonText)
-                        .font(.headline)
-                        .bold()
+            }
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        BackButtonNavBar()
+                    }
                 }
             }
-            .padding(.horizontal, 24)
         }
     }
 }
@@ -55,3 +61,6 @@ struct VerificationView: View {
 #Preview {
     VerificationView()
 }
+
+//                appState.isWalkthroughCompleted = true
+//                UserDefaults.standard.set(true, forKey: "walkthroughCompleted")

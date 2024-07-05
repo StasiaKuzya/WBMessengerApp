@@ -8,3 +8,20 @@
 "select_date_and_see" = "Sélectionnez la date et voyez \nce que vous avez fait";
 "select_date" = "Sélectionner la date";
 "use_spell_out" = "Utiliser l'écriture des nombres";
+
+//App
+"tab_chats" = "Chats";
+"tab_other" = "Autres";
+"walkthrough_headline" = "Discutez facilement avec vos amis et vos proches";
+"walkthrough_startButton" = "Commencer à discuter";
+"walkthrough_userAgreement" = "Accord Utilisateur";
+"verification_haedline" = "Entrez le numéro de téléphone";
+"verification_caption" = "Nous enverrons le code de confirmation au numéro spécifié";
+"verification_continueButton" = "Continuer";
+"contacts_navBarTitle" = "Contacts";
+"contacts_search" = "Rechercher";
+"contacts_lastSeen" = "Last seen";
+"newContact_firstName" = " Nom (obligatoire)";
+"newContact_lastName" = " Nom de Famille (facultatif)";
+"newContact_saveButton" = "Enregistrer";
+"newContact_navBarTitle" = "Nouveau contact";

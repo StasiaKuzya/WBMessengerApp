@@ -22,9 +22,9 @@ struct NewContactView: View {
             Color.wbFontBG2.ignoresSafeArea()
             VStack(spacing: 12) {
                 ContactDetailImageView()
-                NewContactCellView(placeholderText: "Имя (обязательно)", contactInfo: $firstName)
+                NewContactCellView(placeholderText: "newContact_firstName".localized(), contactInfo: $firstName)
                     .padding(.top, 31)
-                NewContactCellView(placeholderText: "Фамилия (опционально)", contactInfo: $lastName)
+                NewContactCellView(placeholderText: "newContact_lastName".localized(), contactInfo: $lastName)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
@@ -38,7 +38,7 @@ struct NewContactView: View {
                 NewContactCellView(placeholderText: "@instagram", contactInfo: $instagram)
                 NewContactCellView(placeholderText: "linkedin", contactInfo: $linkedin)
                 NewContactCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
-                SaveButtonView(buttonText: "Сохранить", isEnabled: !firstName.isEmpty)
+                SaveButtonView(buttonText: "newContact_saveButton".localized(), isEnabled: !firstName.isEmpty, action:{})
                     .padding(.top, 13)
             }
             .padding(.horizontal, 24)
@@ -51,7 +51,7 @@ struct NewContactView: View {
                     }) {
                         BackButtonNavBar()
                     }
-                    TitleNavBar(titleNavBar: "Новый контакт")
+                    TitleNavBar(titleNavBar: "newContact_navBarTitle".localized())
                 }
             }
         }

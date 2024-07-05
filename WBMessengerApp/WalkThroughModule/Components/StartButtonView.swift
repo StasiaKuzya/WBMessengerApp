@@ -9,11 +9,11 @@ import SwiftUI
 
 struct StartButtonView: View {
     @State var buttonText: String = ""
-    @State var showModalScreen: Bool = false
+    @Binding var buttonTapped: Bool
     
     var body: some View {
         Button {
-            showModalScreen.toggle()
+            buttonTapped = true
         } label: {
             Text(buttonText)
                 .padding(.vertical, 16)
@@ -24,12 +24,9 @@ struct StartButtonView: View {
                 .font(.headline)
                 .bold()
         }
-        .sheet(isPresented: $showModalScreen, content: {
-            VerificationView()
-        })
     }
 }
 
 #Preview {
-    StartButtonView(buttonText: "Тест")
+    StartButtonView(buttonText: "Тест", buttonTapped: .constant(false))
 }

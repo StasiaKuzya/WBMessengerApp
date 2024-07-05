@@ -8,3 +8,20 @@
 "select_date_and_see" = "Выбери дату и удивись";
 "select_date" = "Выбери дату";
 "use_spell_out" = "Используй написную версию дат";
+
+//App
+"tab_chats" = "Чаты";
+"tab_other" = "Другие";
+"walkthrough_headline" = "Общайтесь с друзьями\nи близкими легко";
+"walkthrough_startButton" = "Начать общаться";
+"walkthrough_userAgreement" = "Пользовательское соглашение";
+"verification_haedline" = "Введите номер телефона";
+"verification_caption" = "Мы вышлем код подтверждения на указанный номер";
+"verification_continueButton" = "Продолжить";
+"contacts_navBarTitle" = "Контакты";
+"contacts_search" = "Поиск";
+"contacts_lastSeen" = "Last seen";
+"newContact_firstName" = "Имя (обязательно)";
+"newContact_lastName" = "Фамилия (опционально)";
+"newContact_saveButton" = "Сохранить";
+"newContact_navBarTitle" = "Новый контакт";

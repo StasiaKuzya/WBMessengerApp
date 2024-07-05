@@ -16,7 +16,7 @@ struct ContactSearchView: View {
                 .foregroundStyle(.wbDisable)
             TextField("",
                       text: $contactSearch,
-                      prompt: Text("Search")
+                      prompt: Text("contacts_search".localized())
                 .foregroundColor(.wbDisable))
         }
         .bold()
