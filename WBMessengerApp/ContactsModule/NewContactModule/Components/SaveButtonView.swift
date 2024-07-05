@@ -11,10 +11,12 @@ struct SaveButtonView: View {
     @State var buttonText: String = ""
     @State var saveContactDetailData: Bool = false
     var isEnabled: Bool = true
+    var action: () -> Void
     
     var body: some View {
         Button {
             saveContactDetailData.toggle()
+            action()
         } label: {
             Text(buttonText)
                 .padding(.vertical, 16)
@@ -31,5 +33,5 @@ struct SaveButtonView: View {
 }
 
 #Preview {
-    SaveButtonView(buttonText: "Save", saveContactDetailData: false, isEnabled: false)
+    SaveButtonView(buttonText: "Save", saveContactDetailData: false, isEnabled: false, action: {})
 }

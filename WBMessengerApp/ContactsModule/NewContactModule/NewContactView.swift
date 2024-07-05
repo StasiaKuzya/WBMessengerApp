@@ -38,7 +38,7 @@ struct NewContactView: View {
                 NewContactCellView(placeholderText: "@instagram", contactInfo: $instagram)
                 NewContactCellView(placeholderText: "linkedin", contactInfo: $linkedin)
                 NewContactCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
-                SaveButtonView(buttonText: "Сохранить", isEnabled: !firstName.isEmpty)
+                SaveButtonView(buttonText: "Сохранить", isEnabled: !firstName.isEmpty, action:{})
                     .padding(.top, 13)
             }
             .padding(.horizontal, 24)
