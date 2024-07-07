@@ -15,7 +15,7 @@
 "walkthrough_headline" = "Discutez facilement avec vos amis et vos proches";
 "walkthrough_startButton" = "Commencer à discuter";
 "walkthrough_userAgreement" = "Accord Utilisateur";
-"verification_haedline" = "Entrez le numéro de téléphone";
+"verification_headline" = "Entrez le numéro de téléphone";
 "verification_caption" = "Nous enverrons le code de confirmation au numéro spécifié";
 "verification_continueButton" = "Continuer";
 "contacts_navBarTitle" = "Contacts";
@@ -25,3 +25,6 @@
 "newContact_lastName" = " Nom de Famille (facultatif)";
 "newContact_saveButton" = "Enregistrer";
 "newContact_navBarTitle" = "Nouveau contact";
+"codeinput_headline" = "Entrez le code";
+"codeinput_caption" = "Code Envoyé au numéro";
+"codeinput_repeatRequest " = "Re-télécharger le code";

@@ -1,5 +1,5 @@
 //
-//  VerificationView.swift
+//  NumberInputView.swift
 //  WBMessengerApp
 //
 //  Created by Анастасия on 05.06.2024.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct VerificationView: View {
-    @State var number = ""
+struct NumberInputView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appState: AppState
     @State private var phoneNumber: String = ""
     @State private var showProgress = false
+    @State private var showCodeInput = false
 
     var body: some View {
         ZStack {
@@ -24,7 +24,7 @@ struct VerificationView: View {
                     AnimatedProgressView()
                 } else {
                     VStack {
-                        HeadlineView(headlineText: "verification_haedline".localized())
+                        HeadlineView(headlineText: "verification_headline".localized())
                         CaptionView(caption: "verification_caption".localized())
                             .padding(.top, 8)
                         
@@ -34,6 +34,10 @@ struct VerificationView: View {
                         SaveButtonView(buttonText: "verification_continueButton".localized(), isEnabled: phoneNumber.count == 13) {
                             withAnimation {
                                 showProgress = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    showProgress = false
+                                    showCodeInput = true
+                                }
                             }
                         }
                         .padding(.top, 69)
@@ -54,12 +58,15 @@ struct VerificationView: View {
                     }
                 }
             }
+            .fullScreenCover(isPresented: $showCodeInput) {
+                CodeInputView(phoneNumber: phoneNumber)
+            }
         }
     }
 }
 
 #Preview {
-    VerificationView()
+    NumberInputView()
 }
 
 //                appState.isWalkthroughCompleted = true

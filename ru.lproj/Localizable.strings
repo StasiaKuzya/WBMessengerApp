@@ -15,7 +15,7 @@
 "walkthrough_headline" = "Общайтесь с друзьями\nи близкими легко";
 "walkthrough_startButton" = "Начать общаться";
 "walkthrough_userAgreement" = "Пользовательское соглашение";
-"verification_haedline" = "Введите номер телефона";
+"verification_headline" = "Введите номер телефона";
 "verification_caption" = "Мы вышлем код подтверждения на указанный номер";
 "verification_continueButton" = "Продолжить";
 "contacts_navBarTitle" = "Контакты";
@@ -25,3 +25,6 @@
 "newContact_lastName" = "Фамилия (опционально)";
 "newContact_saveButton" = "Сохранить";
 "newContact_navBarTitle" = "Новый контакт";
+"codeinput_headline" = "Введите код";
+"codeinput_caption" = "Отправили код на номер";
+"codeinput_repeatRequest" = "Запросить код повторно";

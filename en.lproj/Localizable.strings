@@ -15,7 +15,7 @@
 "walkthrough_headline" = "Communicate with friends and family easily";
 "walkthrough_startButton" = "Start chatting";
 "walkthrough_userAgreement" = "User Agreement";
-"verification_haedline" = "Enter phone number";
+"verification_headline" = "Enter phone number";
 "verification_caption" = "We will send a confirmation code to the specified number";
 "verification_continueButton" = "Continue";
 "contacts_navBarTitle" = "Contacts";
@@ -25,3 +25,6 @@
 "newContact_lastName" = "Last name (optional)";
 "newContact_saveButton" = "Save";
 "newContact_navBarTitle" = "New contact";
+"codeinput_headline" = "Enter code";
+"codeinput_caption" = "We sent the code to the number";
+"codeinput_repeatRequest" = "Request the code again";
