@@ -15,7 +15,7 @@ struct WalkthroughNavBarView: View {
             WalkthroughView(buttonTapped: $buttonTapped)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(isPresented: $buttonTapped) {
-                    VerificationView()
+                    NumberInputView()
                 }
         }
     }

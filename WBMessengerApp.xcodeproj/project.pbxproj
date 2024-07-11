@@ -16,7 +16,7 @@
 		5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA02C107EC7009E641A /* StartButtonView.swift */; };
 		5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA22C107FAA009E641A /* UserAgreementButtonView.swift */; };
 		5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA42C1083B4009E641A /* HeadlineView.swift */; };
-		5A7A6FA82C108699009E641A /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA72C108699009E641A /* VerificationView.swift */; };
+		5A7A6FA82C108699009E641A /* NumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FA72C108699009E641A /* NumberInputView.swift */; };
 		5A7A6FDD2C146D06009E641A /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FDC2C146D06009E641A /* TabBarView.swift */; };
 		5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FDE2C146DB3009E641A /* ContactsNavBarView.swift */; };
 		5A7A6FE12C147A8E009E641A /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A6FE02C147A8E009E641A /* ContactsView.swift */; };
@@ -46,6 +46,9 @@
 		5A7A70532C1BEE79009E641A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A70512C1BEE61009E641A /* DataManager.swift */; };
 		5AB1207F2C36AA9800889BFA /* CaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1207E2C36AA9800889BFA /* CaptionView.swift */; };
 		5AB120812C37E9D400889BFA /* AnimatedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB120802C37E9D300889BFA /* AnimatedProgressView.swift */; };
+		5AB120892C3A83C200889BFA /* VerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB120882C3A83C200889BFA /* VerificationData.swift */; };
+		5AB1208B2C3A842B00889BFA /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1208A2C3A842B00889BFA /* CodeInputView.swift */; };
+		5AB120902C3A942100889BFA /* CodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1208F2C3A942100889BFA /* CodeDigitView.swift */; };
 		5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */; };
 		5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */; };
 		5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA952C1F2A6400F583EE /* AppState.swift */; };
@@ -102,7 +105,7 @@
 		5A7A6FA02C107EC7009E641A /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		5A7A6FA22C107FAA009E641A /* UserAgreementButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementButtonView.swift; sourceTree = "<group>"; };
 		5A7A6FA42C1083B4009E641A /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
-		5A7A6FA72C108699009E641A /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		5A7A6FA72C108699009E641A /* NumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputView.swift; sourceTree = "<group>"; };
 		5A7A6FDC2C146D06009E641A /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		5A7A6FDE2C146DB3009E641A /* ContactsNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsNavBarView.swift; sourceTree = "<group>"; };
 		5A7A6FE02C147A8E009E641A /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -135,6 +138,9 @@
 		5A7A70512C1BEE61009E641A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5AB1207E2C36AA9800889BFA /* CaptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionView.swift; sourceTree = "<group>"; };
 		5AB120802C37E9D300889BFA /* AnimatedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedProgressView.swift; sourceTree = "<group>"; };
+		5AB120882C3A83C200889BFA /* VerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationData.swift; sourceTree = "<group>"; };
+		5AB1208A2C3A842B00889BFA /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
+		5AB1208F2C3A942100889BFA /* CodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDigitView.swift; sourceTree = "<group>"; };
 		5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughNavBarView.swift; sourceTree = "<group>"; };
 		5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatIntent.swift; sourceTree = "<group>"; };
 		5ACBAA952C1F2A6400F583EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -271,8 +277,9 @@
 		5A7A6FA62C10866E009E641A /* VerificationModule */ = {
 			isa = PBXGroup;
 			children = (
-				5A7A6FA72C108699009E641A /* VerificationView.swift */,
-				5AB1207D2C36AA6F00889BFA /* Components */,
+				5AB120912C3A9AAF00889BFA /* Model */,
+				5AB1208C2C3A8DFE00889BFA /* NumberInputModule */,
+				5AB1208D2C3A8E1A00889BFA /* CodeInputModule */,
 			);
 			path = VerificationModule;
 			sourceTree = "<group>";
@@ -398,6 +405,40 @@
 				5AB120802C37E9D300889BFA /* AnimatedProgressView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB1208C2C3A8DFE00889BFA /* NumberInputModule */ = {
+			isa = PBXGroup;
+			children = (
+				5A7A6FA72C108699009E641A /* NumberInputView.swift */,
+				5AB1207D2C36AA6F00889BFA /* Components */,
+			);
+			path = NumberInputModule;
+			sourceTree = "<group>";
+		};
+		5AB1208D2C3A8E1A00889BFA /* CodeInputModule */ = {
+			isa = PBXGroup;
+			children = (
+				5AB1208A2C3A842B00889BFA /* CodeInputView.swift */,
+				5AB1208E2C3A940600889BFA /* Components */,
+			);
+			path = CodeInputModule;
+			sourceTree = "<group>";
+		};
+		5AB1208E2C3A940600889BFA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5AB1208F2C3A942100889BFA /* CodeDigitView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB120912C3A9AAF00889BFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5AB120882C3A83C200889BFA /* VerificationData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5ACBAA922C1F2A0B00F583EE /* AppIntents */ = {
@@ -562,11 +603,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB1208B2C3A842B00889BFA /* CodeInputView.swift in Sources */,
 				5A3D81652C296C4600FF9B53 /* StringInterpolationView.swift in Sources */,
 				5A7A6FF42C177A79009E641A /* NewContactCellView.swift in Sources */,
 				5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */,
 				5A7A6FED2C15E0D2009E641A /* PersonalChatView.swift in Sources */,
 				5A7A6FA32C107FAA009E641A /* UserAgreementButtonView.swift in Sources */,
+				5AB120892C3A83C200889BFA /* VerificationData.swift in Sources */,
 				5AB1207F2C36AA9800889BFA /* CaptionView.swift in Sources */,
 				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
 				5A7A6FE32C147B3D009E641A /* ContantCellView.swift in Sources */,
@@ -576,7 +619,7 @@
 				5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */,
 				5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */,
 				5A7A6FFF2C178980009E641A /* TitleNavBar.swift in Sources */,
-				5A7A6FA82C108699009E641A /* VerificationView.swift in Sources */,
+				5A7A6FA82C108699009E641A /* NumberInputView.swift in Sources */,
 				5A7A6FF62C177D4A009E641A /* SaveButtonView.swift in Sources */,
 				5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */,
 				5A7A6FE62C147EA3009E641A /* ContactTextInfoView.swift in Sources */,
@@ -589,6 +632,7 @@
 				5A7A6FE12C147A8E009E641A /* ContactsView.swift in Sources */,
 				5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */,
 				5A7A6FFC2C17820E009E641A /* ContactDetailImageView.swift in Sources */,
+				5AB120902C3A942100889BFA /* CodeDigitView.swift in Sources */,
 				5A7A6FEA2C1507F6009E641A /* ContactPlaceholderView.swift in Sources */,
 				5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */,
 				5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */,

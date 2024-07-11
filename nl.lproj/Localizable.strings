@@ -15,7 +15,7 @@
 "walkthrough_headline" = "Kommunizieren Sie leicht mit Freunden \nund Verwandten";
 "walkthrough_startButton" = "Chat beginnen";
 "walkthrough_userAgreement" = "Nutzungsvereinbarung";
-"verification_haedline" = "Telefonnummer eingeben";
+"verification_headline" = "Telefonnummer eingeben";
 "verification_caption" = "Wir senden den Bestätigungscode an die angegebene Nummer";
 "verification_continueButton" = "Weiter";
 "contacts_navBarTitle" = "Kontakte";
@@ -25,3 +25,6 @@
 "newContact_lastName" = "Nachname (optional)";
 "newContact_saveButton" = "Speichern";
 "newContact_navBarTitle" = "Neuer Kontakt";
+"codeinput_headline" = "Code eingeben";
+"codeinput_caption" = "Wir haben den Code an die Nummer gesendet";
+"codeinput_repeatRequest" = "Code erneut anfordern";
