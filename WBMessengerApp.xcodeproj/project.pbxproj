@@ -49,6 +49,10 @@
 		5AB120892C3A83C200889BFA /* VerificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB120882C3A83C200889BFA /* VerificationData.swift */; };
 		5AB1208B2C3A842B00889BFA /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1208A2C3A842B00889BFA /* CodeInputView.swift */; };
 		5AB120902C3A942100889BFA /* CodeDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1208F2C3A942100889BFA /* CodeDigitView.swift */; };
+		5AB942142C401D7D00225348 /* HashFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB942132C401D7D00225348 /* HashFunc.swift */; };
+		5AB942162C40238A00225348 /* SetExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB942152C40238A00225348 /* SetExample.swift */; };
+		5AB942182C40239800225348 /* DictionaryExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB942172C40239800225348 /* DictionaryExample.swift */; };
+		5AB9421A2C4024F900225348 /* CustomHashFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB942192C4024F900225348 /* CustomHashFunc.swift */; };
 		5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */; };
 		5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */; };
 		5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA952C1F2A6400F583EE /* AppState.swift */; };
@@ -141,6 +145,10 @@
 		5AB120882C3A83C200889BFA /* VerificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationData.swift; sourceTree = "<group>"; };
 		5AB1208A2C3A842B00889BFA /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
 		5AB1208F2C3A942100889BFA /* CodeDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeDigitView.swift; sourceTree = "<group>"; };
+		5AB942132C401D7D00225348 /* HashFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashFunc.swift; sourceTree = "<group>"; };
+		5AB942152C40238A00225348 /* SetExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExample.swift; sourceTree = "<group>"; };
+		5AB942172C40239800225348 /* DictionaryExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExample.swift; sourceTree = "<group>"; };
+		5AB942192C4024F900225348 /* CustomHashFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHashFunc.swift; sourceTree = "<group>"; };
 		5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughNavBarView.swift; sourceTree = "<group>"; };
 		5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatIntent.swift; sourceTree = "<group>"; };
 		5ACBAA952C1F2A6400F583EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -208,6 +216,7 @@
 				5A7A70382C19C864009E641A /* WBMessengerWidget */,
 				5A3D815A2C2836F100FF9B53 /* BankConsoleProgram */,
 				5ADDF03A2C344EC100D1D990 /* EndlessScroll */,
+				5AB942122C401D4400225348 /* HashSetDictionary */,
 				5A3D81632C284E2300FF9B53 /* HeapStackMemory */,
 				5A7A70332C19C864009E641A /* Frameworks */,
 				5A7A6F8E2C1071E2009E641A /* Products */,
@@ -441,6 +450,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5AB942122C401D4400225348 /* HashSetDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				5AB942132C401D7D00225348 /* HashFunc.swift */,
+				5AB942192C4024F900225348 /* CustomHashFunc.swift */,
+				5AB942152C40238A00225348 /* SetExample.swift */,
+				5AB942172C40239800225348 /* DictionaryExample.swift */,
+			);
+			path = HashSetDictionary;
+			sourceTree = "<group>";
+		};
 		5ACBAA922C1F2A0B00F583EE /* AppIntents */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,12 +643,16 @@
 				5A7A6FF62C177D4A009E641A /* SaveButtonView.swift in Sources */,
 				5A7A6FA52C1083B4009E641A /* HeadlineView.swift in Sources */,
 				5A7A6FE62C147EA3009E641A /* ContactTextInfoView.swift in Sources */,
+				5AB942182C40239800225348 /* DictionaryExample.swift in Sources */,
 				5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */,
 				5A7A70042C18AD42009E641A /* ImagePicker.swift in Sources */,
+				5AB942162C40238A00225348 /* SetExample.swift in Sources */,
+				5AB942142C401D7D00225348 /* HashFunc.swift in Sources */,
 				5AB120812C37E9D400889BFA /* AnimatedProgressView.swift in Sources */,
 				5A7A6FF22C177A25009E641A /* NewContactView.swift in Sources */,
 				5A7A6FF82C177E90009E641A /* ContactTelNumberView.swift in Sources */,
 				5ADDF03E2C344EF200D1D990 /* EmojiCellView.swift in Sources */,
+				5AB9421A2C4024F900225348 /* CustomHashFunc.swift in Sources */,
 				5A7A6FE12C147A8E009E641A /* ContactsView.swift in Sources */,
 				5A7A6F912C1071E2009E641A /* WBMessengerAppApp.swift in Sources */,
 				5A7A6FFC2C17820E009E641A /* ContactDetailImageView.swift in Sources */,
