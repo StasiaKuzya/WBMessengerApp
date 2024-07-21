@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WBMessengerUISystem
 
 struct NewContactView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -22,23 +23,31 @@ struct NewContactView: View {
             Color.wbFontBG2.ignoresSafeArea()
             VStack(spacing: 12) {
                 ContactDetailImageView()
-                NewContactCellView(placeholderText: "newContact_firstName".localized(), contactInfo: $firstName)
+                NewContactCellView(placeholderText: "newContact_firstName".localized(), contactInfo: $firstName, textColor: .wbSecondary, bgColor: .wbFontBG)
                     .padding(.top, 31)
-                NewContactCellView(placeholderText: "newContact_lastName".localized(), contactInfo: $lastName)
+                NewContactCellView(placeholderText: "newContact_lastName".localized(), contactInfo: $lastName, textColor: .wbSecondary, bgColor: .wbFontBG)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                ContactTelNumberView(number: $phoneNumber, isNumber: !phoneNumber.isEmpty)
+                ContactTelNumberView(number: $phoneNumber,
+                                     isNumber: !phoneNumber.isEmpty,
+                                     textColor1: .wbFont,
+                                     textColor2: .wbSecondary,
+                                     bgColor: .wbFontBG)
                     .padding(.top, 4)
                 Divider()
                     .background(.wbDivider)
                     .padding(.top, 4)
-                NewContactCellView(placeholderText: "twitter", contactInfo: $twitter)
+                NewContactCellView(placeholderText: "twitter", contactInfo: $twitter, textColor: .wbSecondary, bgColor: .wbFontBG)
                     .padding(.top, 4)
-                NewContactCellView(placeholderText: "@instagram", contactInfo: $instagram)
-                NewContactCellView(placeholderText: "linkedin", contactInfo: $linkedin)
-                NewContactCellView(placeholderText: "facebook/profile", contactInfo: $facebook)
-                SaveButtonView(buttonText: "newContact_saveButton".localized(), isEnabled: !firstName.isEmpty, action:{})
+                NewContactCellView(placeholderText: "@instagram", contactInfo: $instagram, textColor: .wbSecondary, bgColor: .wbFontBG)
+                NewContactCellView(placeholderText: "linkedin", contactInfo: $linkedin, textColor: .wbSecondary, bgColor: .wbFontBG)
+                NewContactCellView(placeholderText: "facebook/profile", contactInfo: $facebook, textColor: .wbSecondary, bgColor: .wbFontBG)
+                SaveButtonView(buttonText: "newContact_saveButton".localized(), 
+                               isEnabled: !firstName.isEmpty,
+                               textColor: .wbButtonText,
+                               bgColor: .wbDefaultPurple,
+                               action:{})
                     .padding(.top, 13)
             }
             .padding(.horizontal, 24)
