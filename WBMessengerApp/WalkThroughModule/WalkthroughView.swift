@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WBMessengerUISystem
 
 struct WalkthroughView: View {
     @Binding var buttonTapped: Bool
@@ -16,7 +17,8 @@ struct WalkthroughView: View {
             VStack {
                 Spacer()
                 Image("walktrough")
-                HeadlineView(headlineText: "walkthrough_headline".localized())
+                HeadlineView(headlineText: "walkthrough_headline".localized(),
+                             textColor: .wbFont)
                     .padding(.top, 42)
                 Spacer()
                 UserAgreementButtonView()

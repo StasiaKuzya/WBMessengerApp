@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WBMessengerUISystem
 
 struct CodeInputView: View {
     @State private var verificationCode = Array(repeating: "", count: 4)
@@ -17,8 +18,10 @@ struct CodeInputView: View {
         ZStack {
             Color.wbMainBG.ignoresSafeArea()
             VStack(spacing: 0) {
-                HeadlineView(headlineText: "codeinput_headline".localized())
-                CaptionView(caption: "\("codeinput_caption".localized())\n +7 \(phoneNumber)")
+                HeadlineView(headlineText: "codeinput_headline".localized(), 
+                             textColor: .wbFont)
+                CaptionView(caption: "\("codeinput_caption".localized())\n +7 \(phoneNumber)",
+                            textColor: .wbFont)
                     .padding(.top, 8)
                 
                 HStack(spacing: 40) {
