@@ -15,7 +15,7 @@ struct ContactsView: View {
         .init(id: 2, firstName: "Jane", lastName: "Smith", lastVisit: Date(), imageName: nil, isStory: false, isOnline: true),
         .init(id: 3, firstName: "Janetta", lastName: "Tsmithova", lastVisit: Date(), imageName: nil, isStory: true, isOnline: false),
         .init(id: 4, firstName: "Alice", lastName: "Johnson", lastVisit: Date(), imageName: nil, isStory: true, isOnline: true),
-        .init(id: 5, firstName: "Alex", lastName: "John", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false)
+        .init(id: 5, firstName: "Alex", lastName: "John", lastVisit: Date(), imageName: "https://kartinki.pics/uploads/posts/2022-05/1652216537_3-kartinkin-net-p-rik-i-morti-kartinki-na-avu-3.jpg", isStory: false, isOnline: false)
     ]
     
     var filteredContacts: [Contact] {

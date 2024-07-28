@@ -7,17 +7,6 @@
 
 import SwiftUI
 
-//TODO: create file for struct Contact
-struct Contact: Hashable {
-    let id: Int
-    let firstName: String
-    let lastName: String
-    let lastVisit: Date
-    let imageName: String?
-    let isStory: Bool
-    let isOnline: Bool
-}
-
 struct ContantCellView: View {
     var contact: Contact
     
