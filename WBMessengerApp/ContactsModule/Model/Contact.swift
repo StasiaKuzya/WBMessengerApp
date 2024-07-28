@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Contact: Hashable {
+struct Contact: Hashable, Codable {
     let id: Int
     let firstName: String
     let lastName: String
