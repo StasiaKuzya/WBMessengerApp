@@ -55,6 +55,7 @@
 		5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */; };
 		5ACBAA942C1F2A2600F583EE /* OpenChatIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */; };
 		5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBAA952C1F2A6400F583EE /* AppState.swift */; };
+		5ACBB6792C5665650081417F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBB6782C5665650081417F /* Contact.swift */; };
 		5ADDEF692C29898700D1D990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDEF6B2C29898700D1D990 /* Localizable.strings */; };
 		5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDEF702C298D0900D1D990 /* StringExtension.swift */; };
 		5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */; };
@@ -171,6 +172,7 @@
 		5AC2ED842C36A12B00C9469B /* WalkthroughNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughNavBarView.swift; sourceTree = "<group>"; };
 		5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatIntent.swift; sourceTree = "<group>"; };
 		5ACBAA952C1F2A6400F583EE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5ACBB6782C5665650081417F /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		5ADDEF6A2C29898700D1D990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6C2C29898900D1D990 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6D2C298BF300D1D990 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				5ACBAA952C1F2A6400F583EE /* AppState.swift */,
 				5A7A70542C1D9435009E641A /* AppGroup */,
 				5ACBAA922C1F2A0B00F583EE /* AppIntents */,
+				5ACBB6732C5660B60081417F /* Services */,
 				5A7A6FFD2C17895B009E641A /* CustomNavBar */,
 				5A7A70052C18AE3F009E641A /* Utilities */,
 				5A8ACE092C46A92400C70B1F /* UIComponents */,
@@ -330,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7A6FDE2C146DB3009E641A /* ContactsNavBarView.swift */,
+				5ACBB6762C56650A0081417F /* Model */,
 				5A7A6FEF2C1779C2009E641A /* ContactMainModule */,
 				5A7A6FF02C1779FA009E641A /* NewContactModule */,
 			);
@@ -524,6 +528,21 @@
 				5ACBAA932C1F2A2600F583EE /* OpenChatIntent.swift */,
 			);
 			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		5ACBB6732C5660B60081417F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5ACBB6762C56650A0081417F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5ACBB6782C5665650081417F /* Contact.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5ADDEF662C29839900D1D990 /* StringInterpolation */ = {
@@ -723,6 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACBB6792C5665650081417F /* Contact.swift in Sources */,
 				5AB1208B2C3A842B00889BFA /* CodeInputView.swift in Sources */,
 				5A3D81652C296C4600FF9B53 /* StringInterpolationView.swift in Sources */,
 				5A7A70522C1BEE61009E641A /* DataManager.swift in Sources */,
