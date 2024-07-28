@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContactsView: View {
-    @State var contactSearch = ""
     @Binding var contactPath: [Contact]
-    private let contacts: [Contact] = [
+    @State var contactSearch = ""
+    @State private var cancellables: Set<AnyCancellable> = []
+    @State private var contacts: [Contact] = [
         .init(id: 1, firstName: "John", lastName: "Doe", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false),
         .init(id: 2, firstName: "Jane", lastName: "Smith", lastVisit: Date(), imageName: nil, isStory: false, isOnline: true),
         .init(id: 3, firstName: "Janetta", lastName: "Tsmithova", lastVisit: Date(), imageName: nil, isStory: true, isOnline: false),
@@ -57,6 +59,22 @@ struct ContactsView: View {
         .navigationDestination(for: Contact.self) { contact in
             PersonalChatView(contact: contact)
         }
+        .onAppear {
+            fetchContacts()
+        }
+    }
+    
+    private func fetchContacts() {
+        APIClient().fetchContacts()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    print("Failed to fetch contacts: \(error)")
+                }
+            }, receiveValue: { fetchedContacts in
+                self.contacts = fetchedContacts
+            })
+            .store(in: &cancellables)
     }
 }
 
