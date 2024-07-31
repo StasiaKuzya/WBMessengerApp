@@ -59,6 +59,11 @@
 		5ACBB67B2C566CC50081417F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBB67A2C566CC50081417F /* NetworkManager.swift */; };
 		5ACBB67D2C566CE10081417F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBB67C2C566CE10081417F /* APIClient.swift */; };
 		5ACBB67F2C566EAF0081417F /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBB67E2C566EAF0081417F /* APIResponse.swift */; };
+		5ACDE8C42C5A2ED80072CDD2 /* PersonalChatNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8C32C5A2ED80072CDD2 /* PersonalChatNavView.swift */; };
+		5ACDE8C72C5A31450072CDD2 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = 5ACDE8C62C5A31450072CDD2 /* ExyteChat */; };
+		5ACDE8CA2C5A3DEC0072CDD2 /* SentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8C92C5A3DEC0072CDD2 /* SentMessageView.swift */; };
+		5ACDE8CC2C5A49910072CDD2 /* RoundedCornersShape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8CB2C5A49910072CDD2 /* RoundedCornersShape+.swift */; };
+		5ACDE8CE2C5A49CB0072CDD2 /* RecievedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */; };
 		5ADDEF692C29898700D1D990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDEF6B2C29898700D1D990 /* Localizable.strings */; };
 		5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDEF702C298D0900D1D990 /* StringExtension.swift */; };
 		5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */; };
@@ -179,6 +184,10 @@
 		5ACBB67A2C566CC50081417F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		5ACBB67C2C566CE10081417F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5ACBB67E2C566EAF0081417F /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		5ACDE8C32C5A2ED80072CDD2 /* PersonalChatNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatNavView.swift; sourceTree = "<group>"; };
+		5ACDE8C92C5A3DEC0072CDD2 /* SentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageView.swift; sourceTree = "<group>"; };
+		5ACDE8CB2C5A49910072CDD2 /* RoundedCornersShape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundedCornersShape+.swift"; sourceTree = "<group>"; };
+		5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecievedMessageView.swift; sourceTree = "<group>"; };
 		5ADDEF6A2C29898700D1D990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6C2C29898900D1D990 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6D2C298BF300D1D990 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -206,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACDE8C72C5A31450072CDD2 /* ExyteChat in Frameworks */,
 				5A8ACE152C46AFEC00C70B1F /* WBMessengerUISystem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +368,9 @@
 		5A7A6FEB2C15E093009E641A /* PersonalChatModule */ = {
 			isa = PBXGroup;
 			children = (
+				5ACDE8C32C5A2ED80072CDD2 /* PersonalChatNavView.swift */,
 				5A7A6FEC2C15E0D2009E641A /* PersonalChatView.swift */,
+				5ACDE8C82C5A3DD60072CDD2 /* Components */,
 			);
 			path = PersonalChatModule;
 			sourceTree = "<group>";
@@ -412,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7A70032C18AD42009E641A /* ImagePicker.swift */,
+				5ACDE8CB2C5A49910072CDD2 /* RoundedCornersShape+.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -554,6 +567,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5ACDE8C82C5A3DD60072CDD2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5ACDE8C92C5A3DEC0072CDD2 /* SentMessageView.swift */,
+				5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5ADDEF662C29839900D1D990 /* StringInterpolation */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +643,9 @@
 				5A8ACE142C46AFEC00C70B1F /* PBXTargetDependency */,
 			);
 			name = WBMessengerApp;
+			packageProductDependencies = (
+				5ACDE8C62C5A31450072CDD2 /* ExyteChat */,
+			);
 			productName = WBMessengerApp;
 			productReference = 5A7A6F8D2C1071E2009E641A /* WBMessengerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -698,6 +723,9 @@
 				es,
 			);
 			mainGroup = 5A7A6F842C1071E2009E641A;
+			packageReferences = (
+				5ACDE8C52C5A31450072CDD2 /* XCRemoteSwiftPackageReference "Chat" */,
+			);
 			productRefGroup = 5A7A6F8E2C1071E2009E641A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -751,6 +779,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ACDE8C42C5A2ED80072CDD2 /* PersonalChatNavView.swift in Sources */,
 				5ACBB6792C5665650081417F /* Contact.swift in Sources */,
 				5AB1208B2C3A842B00889BFA /* CodeInputView.swift in Sources */,
 				5A3D81652C296C4600FF9B53 /* StringInterpolationView.swift in Sources */,
@@ -761,6 +790,7 @@
 				5A7A6FA12C107EC7009E641A /* StartButtonView.swift in Sources */,
 				5A7A6FE32C147B3D009E641A /* ContantCellView.swift in Sources */,
 				5A7A6FDD2C146D06009E641A /* TabBarView.swift in Sources */,
+				5ACDE8CA2C5A3DEC0072CDD2 /* SentMessageView.swift in Sources */,
 				5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */,
 				5A7A6F932C1071E2009E641A /* WalkthroughView.swift in Sources */,
 				5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */,
@@ -773,6 +803,7 @@
 				5ACBB67B2C566CC50081417F /* NetworkManager.swift in Sources */,
 				5ACBB67F2C566EAF0081417F /* APIResponse.swift in Sources */,
 				5AB942162C40238A00225348 /* SetExample.swift in Sources */,
+				5ACDE8CC2C5A49910072CDD2 /* RoundedCornersShape+.swift in Sources */,
 				5AB942142C401D7D00225348 /* HashFunc.swift in Sources */,
 				5AB120812C37E9D400889BFA /* AnimatedProgressView.swift in Sources */,
 				5A7A6FF22C177A25009E641A /* NewContactView.swift in Sources */,
@@ -786,6 +817,7 @@
 				5A7A6FEA2C1507F6009E641A /* ContactPlaceholderView.swift in Sources */,
 				5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */,
 				5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */,
+				5ACDE8CE2C5A49CB0072CDD2 /* RecievedMessageView.swift in Sources */,
 				5ADDF0402C344F0400D1D990 /* EndlessScrollView.swift in Sources */,
 				5ACBAA962C1F2A6400F583EE /* AppState.swift in Sources */,
 				5A7A70012C178990009E641A /* BackButtonNavBar.swift in Sources */,
@@ -1232,6 +1264,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5ACDE8C52C5A31450072CDD2 /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5ACDE8C62C5A31450072CDD2 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5ACDE8C52C5A31450072CDD2 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A7A6F852C1071E2009E641A /* Project object */;
 }

@@ -57,7 +57,7 @@ struct ContactsView: View {
         .padding(.bottom, 1)
         .background(Color.wbFontBG2)
         .navigationDestination(for: Contact.self) { contact in
-            PersonalChatView(contact: contact)
+            PersonalChatNavView(contact: contact)
         }
         .onAppear {
             fetchContacts()

@@ -31,7 +31,7 @@ struct ContactsNavBarView: View {
                         }
                     }
                     .navigationDestination(for: Contact.self) { contact in
-                        PersonalChatView(contact: contact)
+                        PersonalChatNavView(contact: contact)
                     }
             }
             
