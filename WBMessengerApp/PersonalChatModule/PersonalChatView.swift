@@ -9,97 +9,58 @@ import SwiftUI
 import Foundation
 import ExyteChat
 
-struct Message: Identifiable {
-    let id = UUID()
-    let text: String
-    let sender: String
-    let timestamp: Date
-}
-
 struct PersonalChatView: View {
-//    @State private var messages: [Message] = []
+    @StateObject private var viewModel: ChatViewModel
+    private let title: String
     
-    //MockData
-    @State private var messages: [Message] = [
-        Message(text: "Hi", sender: "You", timestamp: Date()),
-        Message(text: "TestTestTestTestTestTestTestTestTestTestTestTest", sender: "You", timestamp: Date()+60),
-        Message(text: "Hi", sender: "Tom", timestamp: Date()+65),
-        Message(text: "How are you", sender: "You", timestamp: Date()+120),
-        Message(text: "TestTestTestTestTestTestTestTestTestTestTestTest", sender: "Tom", timestamp: Date()+180),
-        Message(text: "TestTestTestTestTestTestTestTest", sender: "Tom", timestamp: Date()+180),
-    ]
-    
-    @State private var messageText: String = ""
+    init(viewModel: ChatViewModel = ChatViewModel(), title: String) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.title = title
+    }
     
     var body: some View {
-        ZStack {
-            Color.wbFontBG2.ignoresSafeArea()
-            VStack {
-                List(messages) { message in
-                    if message.sender == "You" {
-                        HStack() {
+        ChatView(messages: viewModel.messages, chatType: .conversation) { draft in
+            viewModel.send(draft: draft)
+        } messageBuilder: { message, positionInUserGroup, positionInCommentsGroup, showContextMenuClosure, messageActionClosure, showAttachmentClosure in
+            ZStack {
+                Color.wbFontBG.ignoresSafeArea()
+                VStack {
+                    if message.user.id == "1" {
+                        HStack {
                             Spacer()
                             SentMessageView(message: message)
                         }
-                        .listRowBackground(Color.wbFontBG)
-                        .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
-                        .listRowSeparator(.hidden)
                     } else {
-                        HStack() {
+                        HStack {
                             RecievedMessageView(message: message)
                             Spacer()
                         }
-                        .listRowBackground(Color.wbFontBG)
-                        .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
-                        .listRowSeparator(.hidden)
                     }
                 }
-                .listStyle(.plain)
-                .background(Color.wbFontBG)
-                
-                HStack {
-                    Button {
-                        // TODO: open and chose from gallery
-                    } label: {
-                        Image("plus")
-                    }
-                    
-                    TextField("",
-                              text: $messageText,
-                              prompt: Text("Message"))
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 8)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(.wbFontBG))
-                    .foregroundStyle(.wbFont)
-                    
-                    Button {
-                        sendMessage()
-                    } label: {
-                        Image("send")
-                    }
-                    .disabled(messageText.isEmpty)
-                }
-                .padding()
+                .padding(.vertical, 12)
+                .padding(.horizontal, 16)
             }
-            .onAppear {
-                loadMessages()
+        } inputViewBuilder: { textBinding, attachments, inputViewState, inputViewStyle, inputViewActionClosure, dismissKeyboardClosure in
+            Group {
+                InputView(textBinding: textBinding,
+                          plusAction: { inputViewActionClosure(.photo) },
+                          sendAction: { inputViewActionClosure(.send) })
             }
-            .padding(.top, 1)
         }
-    }
-
-    func sendMessage() {
-        let newMessage = Message(text: messageText, sender: "You", timestamp: Date())
-        messages.append(newMessage)
-        messageText = ""
-        // TODO: send messages on server
-    }
-    
-    func loadMessages() {
-        // TODO: load messages from server or local storage
+        .enableLoadMore(pageSize: 3) { message in
+            viewModel.loadMoreMessage(before: message)
+        }
+        .messageUseMarkdown(messageUseMarkdown: true)
+        .chatNavigation(
+            title: viewModel.chatTitle,
+            status: viewModel.chatStatus,
+            cover: viewModel.chatCover
+        )
+        .onAppear(perform: viewModel.onStart)
+        .onDisappear(perform: viewModel.onStop)
     }
 }
 
 #Preview {
-    PersonalChatView()
+    PersonalChatView(title: "test")
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ExyteChat
 
 struct RecievedMessageView: View {
     var message: Message
@@ -13,8 +14,7 @@ struct RecievedMessageView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(message.text)
-               
-            Text(message.timestamp, style: .time)
+            Text(message.createdAt, style: .time)
                 .font(.caption)
         }
         .padding(.all, 10)
@@ -25,5 +25,5 @@ struct RecievedMessageView: View {
 }
 
 #Preview {
-    RecievedMessageView(message: Message(text: "TestTestTestTestTestTestTestTestTestTestTestTestTestTestTest", sender: "You", timestamp: Date()))
+    RecievedMessageView(message: Message(id: "1", user: User(id: "1", name: "you", avatarURL: nil, isCurrentUser: true), status: .read, createdAt: Date(), text: "testtest", attachments: [], recording: nil, replyMessage: nil))
 }

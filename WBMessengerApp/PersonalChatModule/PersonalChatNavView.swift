@@ -12,7 +12,7 @@ struct PersonalChatNavView: View {
     let contact: Contact
     
     var body: some View {
-        PersonalChatView()
+        PersonalChatView(title: "")
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
