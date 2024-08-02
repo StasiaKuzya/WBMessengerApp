@@ -15,7 +15,7 @@ struct TaskMock: Codable {
 }
 
 final class APIClient {
-    func fetchContacts() -> AnyPublisher<[Contact], NetworkError> {
+    func fetchContacts() -> AnyPublisher<[MockUser], NetworkError> {
         return NetworkManager.shared.fetchContacts()
     }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactTextInfoView: View {
-    var contact: Contact
+    var contact: MockUser
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -31,7 +31,7 @@ struct ContactTextInfoView: View {
 }
 
 #Preview {
-    ContactTextInfoView(contact: Contact(id: 1,
+    ContactTextInfoView(contact: MockUser(id: "1",
                                          firstName: "Anna",
                                          lastName: "Lisichkina",
                                          lastVisit: Date(),

@@ -11,27 +11,17 @@ import ExyteChat
 import ExyteMediaPicker
 
 final class MockChatData {
+    
+    // John is user
+    let john =  MockUser(id: "1", firstName: "John", lastName: "Doe", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false)
+    let jane =  MockUser(id: "2", firstName: "Jane", lastName: "Smith", lastVisit: Date(), imageName: nil, isStory: false, isOnline: true)
+    let janetta =  MockUser(id: "3", firstName: "Janetta", lastName: "Tsmithova", lastVisit: Date(), imageName: nil, isStory: true, isOnline: false)
+    let alice =  MockUser(id: "4", firstName: "Alice", lastName: "Johnson", lastVisit: Date(), imageName: nil, isStory: true, isOnline: true)
+    let alex =  MockUser(id: "5", firstName: "Alex", lastName: "John", lastVisit: Date(), imageName: "https://kartinki.pics/uploads/posts/2022-05/1652216537_3-kartinkin-net-p-rik-i-morti-kartinki-na-avu-3.jpg", isStory: false, isOnline: false)
 
-    // Alternative for avatars `https://ui-avatars.com/api/?name=Tim`
-    let system = MockUser(uid: "0", name: "System")
-    let tim = MockUser(
-        uid: "1",
-        name: "Tim",
-        avatar: AssetExtractor.createLocalUrl(forImageNamed: "tim")
-    )
-    let steve = MockUser(
-        uid: "2",
-        name: "Steve",
-        avatar: AssetExtractor.createLocalUrl(forImageNamed: "steve")
-    )
-    let bob = MockUser(
-        uid: "3",
-        name: "Bob",
-        avatar: AssetExtractor.createLocalUrl(forImageNamed: "bob")
-    )
 
     func randomMessage(senders: [MockUser] = [], date: Date? = nil) -> MockMessage {
-        let senders = senders.isEmpty ? [tim, steve, bob] : senders
+        let senders = senders.isEmpty ? [john, jane, janetta, alice, alex] : senders
         let sender = senders.random()!
         let date = date ?? Date()
         let images = randomImages()

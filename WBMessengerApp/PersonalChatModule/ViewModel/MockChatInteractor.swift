@@ -26,8 +26,8 @@ final class MockChatInteractor: ChatInteractorProtocol {
     }
     
     var senders: [MockUser] {
-        var members = [chatData.steve, chatData.tim]
-        if isActive { members.append(chatData.bob) }
+        var members = [chatData.john, chatData.jane, chatData.janetta, chatData.alex, chatData.alice]
+        if isActive { members.append(chatData.john) }
         return members
     }
     
@@ -77,10 +77,9 @@ final class MockChatInteractor: ChatInteractorProtocol {
                 status = .error(draftMessage)
             }
 
-            let message = await draftMessage.toMockMessage2(user: chatData.tim, status: status, replyMessage: replyToMessage)
+            let message = await draftMessage.toMockMessage2(user: chatData.john, status: status, replyMessage: replyToMessage) // John is user
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                print("message \(message.text) \(message.replyMessage?.text)")
                 chatState.value.append(message)
             }
         }

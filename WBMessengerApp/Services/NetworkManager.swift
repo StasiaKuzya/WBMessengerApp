@@ -24,11 +24,11 @@ final class NetworkManager {
     private init() {}
 
     // GET
-    func fetchContacts() -> AnyPublisher<[Contact], NetworkError> {
+    func fetchContacts() -> AnyPublisher<[MockUser], NetworkError> {
         let url = baseURL.appendingPathComponent("contacts")
         return URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
-            .decode(type: APIResponse<[Contact]>.self, decoder: JSONDecoder())
+            .decode(type: APIResponse<[MockUser]>.self, decoder: JSONDecoder())
             .map(\.data)
             .mapError { _ in NetworkError.requestFailed }
             .eraseToAnyPublisher()

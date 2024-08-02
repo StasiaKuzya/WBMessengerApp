@@ -8,26 +8,24 @@
 import Foundation
 import ExyteChat
 
-struct MockUser: Equatable {
-    let uid: String
-    let name: String
-    let avatar: URL?
-
-    init(uid: String, name: String, avatar: URL? = nil) {
-        self.uid = uid
-        self.name = name
-        self.avatar = avatar
-    }
+struct MockUser: Equatable, Hashable, Codable {
+    let id: String
+    let firstName: String
+    let lastName: String
+    let lastVisit: Date
+    let imageName: String?
+    let isStory: Bool
+    let isOnline: Bool
 }
 
 extension MockUser {
     var isCurrentUser: Bool {
-        uid == "1"
+        id == "1"
     }
 }
 
 extension MockUser {
     func toChatUser() -> ExyteChat.User {
-        ExyteChat.User(id: uid, name: name, avatarURL: avatar, isCurrentUser: isCurrentUser)
+        ExyteChat.User(id: id, name: "\(firstName) \(lastName.prefix(1))", avatarURL: URL(string: imageName ?? ""), isCurrentUser: isOnline)
     }
 }

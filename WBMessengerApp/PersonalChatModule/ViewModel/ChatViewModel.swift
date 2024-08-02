@@ -13,15 +13,15 @@ final class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
     @Published var replyToMessage: ReplyMessage?
     
-    var chatTitle: String {
-        interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.name : "Group chat"
-    }
-    var chatStatus: String {
-        interactor.otherSenders.count == 1 ? "online" : "\(interactor.senders.count) members"
-    }
-    var chatCover: URL? {
-        interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.avatar : nil
-    }
+//    var chatTitle: String {
+//        interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.firstName : "Group chat"
+//    }
+//    var chatStatus: String {
+//        interactor.otherSenders.count == 1 ? "online" : "\(interactor.senders.count) members"
+//    }
+//    var chatCover: URL? {
+//        interactor.otherSenders.count == 1 ? URL(string: "\(interactor.otherSenders.first!.imageName)") : nil
+//    }
 
     private let interactor: ChatInteractorProtocol
     private var subscriptions = Set<AnyCancellable>()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PersonalChatNavView: View {
     @Environment(\.presentationMode) var presentationMode
-    let contact: Contact
+    let contact: MockUser
     
     var body: some View {
         PersonalChatView(title: "")
@@ -51,7 +51,7 @@ struct PersonalChatNavView: View {
 }
 
 #Preview {
-    PersonalChatNavView(contact: Contact(id: 1,
+    PersonalChatNavView(contact: MockUser(id: "11",
                                          firstName: "Anna",
                                          lastName: "Lisichkina",
                                          lastVisit: Date(),
