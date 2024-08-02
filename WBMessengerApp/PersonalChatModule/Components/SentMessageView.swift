@@ -22,10 +22,6 @@ struct SentMessageView: View {
                 }
             }
         }
-        .padding(.all, 10)
-        .background(Rectangle().fill(.wbDefaultPurple))
-        .foregroundStyle(.wbWhite)
-        .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
     }
 }
 

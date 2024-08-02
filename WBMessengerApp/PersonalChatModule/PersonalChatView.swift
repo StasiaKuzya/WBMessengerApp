@@ -33,41 +33,27 @@ struct PersonalChatView: View {
                             Spacer()
                             VStack(alignment: .trailing, spacing: 10) {
                                 if let replyMessage = message.replyMessage {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("Replying to:")
-                                            .font(.caption)
-                                            .foregroundColor(.gray)
-                                        Text(replyMessage.text)
-                                            .font(.caption)
-                                            .padding(5)
-                                            .foregroundColor(.wbFont)
-                                    }
-                                    .padding(.all, 10)
-                                    .background(Color.wbSecondary)
-                                    .cornerRadius(5)
+                                    RepliedMessage(text: replyMessage.text)
                                 }
                                 SentMessageView(message: message)
                             }
+                            .padding(.all, 10)
+                            .background(Rectangle().fill(.wbDefaultPurple))
+                            .foregroundStyle(.wbWhite)
+                            .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
                         }
                     } else {
                         HStack {
                             VStack(alignment: .trailing, spacing: 10) {
                                 if let replyMessage = message.replyMessage {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("Replying to:")
-                                            .font(.caption)
-                                            .foregroundColor(.gray)
-                                        Text(replyMessage.text)
-                                            .font(.caption)
-                                            .padding(5)
-                                            .foregroundColor(.wbFont)
-                                    }
-                                    .padding(.all, 10)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
+                                    RepliedMessage(text: replyMessage.text)
                                 }
                                 RecievedMessageView(message: message)
                             }
+                            .padding(.all, 10)
+                            .background(Rectangle().fill(.wbFontBG2))
+                            .foregroundColor(.wbFont)
+                            .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
                             Spacer()
                         }
                     }
@@ -107,10 +93,6 @@ struct PersonalChatView: View {
     )
     .onAppear(perform: viewModel.onStart)
     .onDisappear(perform: viewModel.onStop)
-    .onChange(of: viewModel.messages) { oldValue, newValue in
-        
-        print("Messages updated: \(oldValue) & \(newValue)")
-    }
     }
 }
 

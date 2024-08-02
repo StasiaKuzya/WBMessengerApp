@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct Task: Codable {
+struct TaskMock: Codable {
     let id: UUID
     let data: String
     let taskType: String
@@ -19,7 +19,7 @@ final class APIClient {
         return NetworkManager.shared.fetchContacts()
     }
 
-    func sendTask(_ task: Task) -> AnyPublisher<Void, NetworkError> {
+    func sendTask(_ task: TaskMock) -> AnyPublisher<Void, NetworkError> {
         return NetworkManager.shared.sendTask(task)
     }
 }

@@ -35,7 +35,7 @@ final class NetworkManager {
     }
 
     // POST
-    func sendTask(_ task: Task) -> AnyPublisher<Void, NetworkError> {
+    func sendTask(_ task: TaskMock) -> AnyPublisher<Void, NetworkError> {
         let url = baseURL.appendingPathComponent("tasks")
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -50,7 +50,7 @@ final class NetworkManager {
     }
 
     // PUT
-    func updateTask(_ task: Task) -> AnyPublisher<Void, NetworkError> {
+    func updateTask(_ task: TaskMock) -> AnyPublisher<Void, NetworkError> {
         let url = baseURL.appendingPathComponent("tasks/\(task.id.uuidString)")
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"

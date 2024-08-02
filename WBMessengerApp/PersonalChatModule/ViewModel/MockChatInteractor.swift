@@ -71,19 +71,19 @@ final class MockChatInteractor: ChatInteractorProtocol {
             chatState.value.remove(at: index)
         }
 
-//        Task {
-//            var status: Message.Status = .sending
-//            if Int.random(min: 0, max: 20) == 0 {
-//                status = .error(draftMessage)
-//            }
-//
-//            let message = await draftMessage.toMockMessage2(user: chatData.tim, status: status, replyMessage: replyToMessage)
-//            DispatchQueue.main.async { [weak self] in
-//                guard let self = self else { return }
-//                print("message \(message.text) \(message.replyMessage?.text)")
-//                chatState.value.append(message)
-//            }
-//        }
+        Task {
+            var status: Message.Status = .sending
+            if Int.random(min: 0, max: 20) == 0 {
+                status = .error(draftMessage)
+            }
+
+            let message = await draftMessage.toMockMessage2(user: chatData.tim, status: status, replyMessage: replyToMessage)
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                print("message \(message.text) \(message.replyMessage?.text)")
+                chatState.value.append(message)
+            }
+        }
     }
     
     func connect() {

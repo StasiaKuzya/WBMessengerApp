@@ -77,6 +77,7 @@
 		5ACDE8CC2C5A49910072CDD2 /* RoundedCornersShape+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8CB2C5A49910072CDD2 /* RoundedCornersShape+.swift */; };
 		5ACDE8CE2C5A49CB0072CDD2 /* RecievedMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */; };
 		5AD66C5B2C5CDDFD006823FB /* ActionChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD66C5A2C5CDDFD006823FB /* ActionChat.swift */; };
+		5AD66C5D2C5CE97D006823FB /* RepliedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD66C5C2C5CE97D006823FB /* RepliedMessage.swift */; };
 		5ADDEF692C29898700D1D990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5ADDEF6B2C29898700D1D990 /* Localizable.strings */; };
 		5ADDEF712C298D0900D1D990 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDEF702C298D0900D1D990 /* StringExtension.swift */; };
 		5ADDF03C2C344EDE00D1D990 /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADDF03B2C344EDE00D1D990 /* EmojiItem.swift */; };
@@ -214,6 +215,7 @@
 		5ACDE8CB2C5A49910072CDD2 /* RoundedCornersShape+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RoundedCornersShape+.swift"; sourceTree = "<group>"; };
 		5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecievedMessageView.swift; sourceTree = "<group>"; };
 		5AD66C5A2C5CDDFD006823FB /* ActionChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionChat.swift; sourceTree = "<group>"; };
+		5AD66C5C2C5CE97D006823FB /* RepliedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliedMessage.swift; sourceTree = "<group>"; };
 		5ADDEF6A2C29898700D1D990 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6C2C29898900D1D990 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5ADDEF6D2C298BF300D1D990 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 				5ACDE8C92C5A3DEC0072CDD2 /* SentMessageView.swift */,
 				5ACDE8CD2C5A49CB0072CDD2 /* RecievedMessageView.swift */,
 				5A4FEF0E2C5B857900188BCC /* InputView.swift */,
+				5AD66C5C2C5CE97D006823FB /* RepliedMessage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				5A7A6FDF2C146DB3009E641A /* ContactsNavBarView.swift in Sources */,
 				5AC2ED852C36A12B00C9469B /* WalkthroughNavBarView.swift in Sources */,
 				5A4FEF012C5AA2CA00188BCC /* Sequence+.swift in Sources */,
+				5AD66C5D2C5CE97D006823FB /* RepliedMessage.swift in Sources */,
 				5AD66C5B2C5CDDFD006823FB /* ActionChat.swift in Sources */,
 				5ACDE8CE2C5A49CB0072CDD2 /* RecievedMessageView.swift in Sources */,
 				5ADDF0402C344F0400D1D990 /* EndlessScrollView.swift in Sources */,
@@ -961,6 +965,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YFKSG45UC4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -974,6 +979,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YFKSG45UC4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -988,6 +994,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1051,6 +1058,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1226,6 +1234,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1261,6 +1270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

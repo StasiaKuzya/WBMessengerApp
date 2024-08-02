@@ -17,10 +17,6 @@ struct RecievedMessageView: View {
             Text(message.createdAt, style: .time)
                 .font(.caption)
         }
-        .padding(.all, 10)
-        .background(Rectangle().fill(.wbFontBG2))
-        .foregroundColor(.wbFont)
-        .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
     }
 }
 
