@@ -28,6 +28,14 @@ struct TabBarView: View {
     init(router: Router) {
         self.router = router
         configureTabBarAppearance()
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .wbFontBG2
+        appearance.shadowColor = .clear
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.wbFont]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.wbFont]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
     
     var body: some View {

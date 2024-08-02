@@ -20,11 +20,13 @@ struct PersonalChatView: View {
     }
     
     var body: some View {
-        ChatView(messages: viewModel.messages, chatType: .conversation, replyMode: .answer) { draft in
-            viewModel.send(draft: draft, replyToMessage: replyToMessage)
-            replyToMessage = nil
-        }
-    messageBuilder: { message, positionInUserGroup, positionInCommentsGroup, showContextMenuClosure, messageActionClosure, showAttachmentClosure in
+        ZStack {
+            Color.green.ignoresSafeArea()
+            ChatView(messages: viewModel.messages, chatType: .conversation, replyMode: .answer) { draft in
+                viewModel.send(draft: draft, replyToMessage: replyToMessage)
+                replyToMessage = nil
+            }
+        messageBuilder: { message, positionInUserGroup, positionInCommentsGroup, showContextMenuClosure, messageActionClosure, showAttachmentClosure in
             ZStack {
                 Color.wbFontBG.ignoresSafeArea()
                 VStack {
@@ -62,37 +64,33 @@ struct PersonalChatView: View {
                 .padding(.horizontal, 16)
             }
         }
-    inputViewBuilder: { textBinding, attachments, inputViewState, inputViewStyle, inputViewActionClosure, dismissKeyboardClosure in
-        InputView(textBinding: textBinding,
-                  replyMessage: replyToMessage,
-                  plusAction: { inputViewActionClosure(.photo) },
-                  sendAction: { inputViewActionClosure(.send) },
-                  cancelAction: { replyToMessage = nil }
-        )
-        .padding(.top, 10)
-        .background(.wbFontBG2)
-        .padding(.top, -10)
-    }
-    messageMenuAction: { (action: ActionChat, defaultActionClosure, message) in
-        switch action {
-        case .reply:
-            replyToMessage = message.toReplyMessage()
-        case .delete:
-            // TODO: add deletion logic
-            print("delete message")
+        inputViewBuilder: { textBinding, attachments, inputViewState, inputViewStyle, inputViewActionClosure, dismissKeyboardClosure in
+            InputView(textBinding: textBinding,
+                      replyMessage: replyToMessage,
+                      plusAction: { inputViewActionClosure(.photo) },
+                      sendAction: { inputViewActionClosure(.send) },
+                      cancelAction: { replyToMessage = nil }
+            )
+            .padding(.top, 10)
+            .background(.wbFontBG2)
+            .padding(.top, -10)
         }
-    }
-    .enableLoadMore(pageSize: 3) { message in
-        viewModel.loadMoreMessage(before: message)
-    }
-    .messageUseMarkdown(messageUseMarkdown: true)
-    .chatNavigation(
-        title: viewModel.chatTitle,
-        status: viewModel.chatStatus,
-        cover: viewModel.chatCover
-    )
-    .onAppear(perform: viewModel.onStart)
-    .onDisappear(perform: viewModel.onStop)
+        messageMenuAction: { (action: ActionChat, defaultActionClosure, message) in
+            switch action {
+            case .reply:
+                replyToMessage = message.toReplyMessage()
+            case .delete:
+                // TODO: add deletion logic
+                print("delete message")
+            }
+        }
+        .enableLoadMore(pageSize: 3) { message in
+            viewModel.loadMoreMessage(before: message)
+        }
+        .messageUseMarkdown(messageUseMarkdown: true)
+        .onAppear(perform: viewModel.onStart)
+        .onDisappear(perform: viewModel.onStop)
+        }
     }
 }
 
