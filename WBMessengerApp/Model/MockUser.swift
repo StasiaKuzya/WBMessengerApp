@@ -31,6 +31,3 @@ extension MockUser {
         ExyteChat.User(id: uid, name: name, avatarURL: avatar, isCurrentUser: isCurrentUser)
     }
 }
-
-import Foundation
-

@@ -34,7 +34,6 @@ struct ContactsNavBarView: View {
                         PersonalChatNavView(contact: contact)
                     }
             }
-            
         }
     }
 }

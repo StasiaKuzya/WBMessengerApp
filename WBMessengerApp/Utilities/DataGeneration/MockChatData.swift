@@ -149,4 +149,18 @@ extension DraftMessage {
             replyMessage: replyMessage
         )
     }
+    
+    func toMockMessage2(user: MockUser, status: Message.Status = .read, replyMessage: ReplyMessage?) async -> MockMessage {
+        MockMessage(
+            uid: id ?? UUID().uuidString,
+            sender: user,
+            createdAt: createdAt,
+            status: user.isCurrentUser ? status : nil,
+            text: text,
+            images: await makeMockImages(),
+            videos: await makeMockVideos(),
+            recording: recording,
+            replyMessage: replyMessage
+        )
+    }
 }

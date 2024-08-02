@@ -11,6 +11,7 @@ import ExyteChat
 
 final class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
+    @Published var replyToMessage: ReplyMessage?
     
     var chatTitle: String {
         interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.name : "Group chat"
@@ -28,9 +29,8 @@ final class ChatViewModel: ObservableObject {
     init(interactor: ChatInteractorProtocol = MockChatInteractor()) {
         self.interactor = interactor
     }
-
-    func send(draft: DraftMessage) {
-        interactor.send(draftMessage: draft)
+    func send(draft: DraftMessage, replyToMessage: ReplyMessage?) {
+        interactor.send(draftMessage: draft, replyToMessage: replyToMessage)
     }
     
     func onStart() {

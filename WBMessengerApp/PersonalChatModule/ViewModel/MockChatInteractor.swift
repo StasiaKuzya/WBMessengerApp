@@ -41,7 +41,7 @@ final class MockChatInteractor: ChatInteractorProtocol {
 
     /// TODO: Generate error with random chance
     /// TODO: Save images from url to files. Imitate upload process
-    func send(draftMessage: ExyteChat.DraftMessage) {
+//    func send(draftMessage: ExyteChat.DraftMessage) {
 //        if draftMessage.id != nil {
 //            guard let index = chatState.value.firstIndex(where: { $0.uid == draftMessage.id }) else {
 //                // TODO: Create error
@@ -60,8 +60,32 @@ final class MockChatInteractor: ChatInteractorProtocol {
 //                self?.chatState.value.append(message)
 //            }
 //        }
-    }
+//    }
+    
+    func send(draftMessage: ExyteChat.DraftMessage, replyToMessage: ExyteChat.ReplyMessage?) {
+        if draftMessage.id != nil {
+            guard let index = chatState.value.firstIndex(where: { $0.uid == draftMessage.id }) else {
+                // TODO: Создать ошибку
+                return
+            }
+            chatState.value.remove(at: index)
+        }
 
+//        Task {
+//            var status: Message.Status = .sending
+//            if Int.random(min: 0, max: 20) == 0 {
+//                status = .error(draftMessage)
+//            }
+//
+//            let message = await draftMessage.toMockMessage2(user: chatData.tim, status: status, replyMessage: replyToMessage)
+//            DispatchQueue.main.async { [weak self] in
+//                guard let self = self else { return }
+//                print("message \(message.text) \(message.replyMessage?.text)")
+//                chatState.value.append(message)
+//            }
+//        }
+    }
+    
     func connect() {
         Timer.publish(every: 2, on: .main, in: .default)
             .autoconnect()
@@ -112,7 +136,10 @@ private extension MockChatInteractor {
 
     func generateNewMessage() {
         let message = chatData.randomMessage(senders: otherSenders)
-        chatState.value.append(message)
+        var updatedMessages = chatState.value
+        updatedMessages.append(message)
+        updatedMessages.sort { $0.createdAt < $1.createdAt }
+        chatState.value = updatedMessages
     }
 
     func updateSendingStatuses() {

@@ -14,7 +14,7 @@ protocol ChatInteractorProtocol {
     var senders: [MockUser] { get }
     var otherSenders: [MockUser] { get }
 
-    func send(draftMessage: ExyteChat.DraftMessage)
+    func send(draftMessage: ExyteChat.DraftMessage, replyToMessage: ExyteChat.ReplyMessage?)
 
     func connect()
     func disconnect()

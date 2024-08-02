@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ExyteChat
+import Combine
 
 enum Action: MessageMenuAction {
     case reply, edit, delete, print
@@ -141,7 +142,6 @@ struct CommentsExampleView: View {
                                 actionClosure(message, .reply)
                             }
                         }
-
                         Spacer()
                     }
                 }
@@ -163,12 +163,9 @@ struct CommentsExampleView: View {
     }
 }
 
-import Foundation
-import Combine
-import ExyteChat
-
 class CommentsExampleViewModel: ObservableObject {
     @Published var messages: [Message] = []
+    @Published var replyToMessage: ReplyMessage?
 
     var chatTitle: String {
         interactor.otherSenders.count == 1 ? interactor.otherSenders.first!.name : "Group chat"
@@ -188,7 +185,7 @@ class CommentsExampleViewModel: ObservableObject {
     }
 
     func send(draft: DraftMessage) {
-        interactor.send(draftMessage: draft)
+        interactor.send(draftMessage: draft, replyToMessage: replyToMessage)
     }
 
     func onStart() {
