@@ -47,6 +47,7 @@ struct PersonalChatNavView: View {
                     }
                 }
             }
+            .toolbar(.hidden, for: .tabBar)
     }
 }
 

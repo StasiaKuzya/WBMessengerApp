@@ -17,11 +17,16 @@ struct RepliedMessage: View {
                     .foregroundColor(.wbDefaultPurple)
                 Text(text)
                     .font(.caption)
-                    .foregroundColor(.black.opacity(0.8))
+                    .foregroundColor(.wbFont)
             }
             .padding()
             .background(RoundedRectangle(cornerRadius: 4)
-                .fill(.wbGradientLightBlue))
+                .fill(.wbReply)
+                .background(RoundedRectangle(cornerRadius: 4)
+                    .fill(.wbDarkPurple)
+                    .offset(x: -4))
+                    .shadow(color: .wbDisable, radius: 1)
+            )
     }
 }
 
