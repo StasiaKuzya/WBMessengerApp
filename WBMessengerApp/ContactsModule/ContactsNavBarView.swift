@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactsNavBarView: View {
-    @State var contactPath = [Contact]()
+    @State var contactPath = [MockUser]()
     
     var body: some View {
         ZStack {
@@ -30,11 +30,10 @@ struct ContactsNavBarView: View {
                             }
                         }
                     }
-                    .navigationDestination(for: Contact.self) { contact in
-                        PersonalChatView(contact: contact)
+                    .navigationDestination(for: MockUser.self) { contact in
+                        PersonalChatNavView(contact: contact)
                     }
             }
-            
         }
     }
 }

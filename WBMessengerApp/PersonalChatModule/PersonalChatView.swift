@@ -6,58 +6,94 @@
 //
 
 import SwiftUI
+import Foundation
+import ExyteChat
 
 struct PersonalChatView: View {
-    @Environment(\.presentationMode) var presentationMode
-    let contact: Contact
+    @StateObject private var viewModel: ChatViewModel
+    private let title: String
+    @State private var replyToMessage: ReplyMessage?
+    
+    init(viewModel: ChatViewModel = ChatViewModel(), title: String) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+        self.title = title
+    }
     
     var body: some View {
-        Text("\(contact.firstName) \(contact.lastName)")
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarBackButtonHidden()
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        BackButtonNavBar()
-                    }
-                    Button(action: {
-                        //TODO: Chat detailization with contact
-                    }) {
-                        let lastNamePrefix = contact.lastName.prefix(1)
-                        TitleNavBar(titleNavBar: "\(contact.firstName) \(String(lastNamePrefix)).")
-                    }
-                }
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button(action: {
-                        //TODO: Chat search with contact
-                    }) {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundStyle(.wbFont)
-                            .bold()
-                    }
-                    Button(action: {
-                        //TODO: Chat info with contact
-                    }) {
-                        Image(systemName: "line.horizontal.3")
-                            .foregroundStyle(.wbFont)
-                            .bold()
-                    }
-                }
+        ZStack {
+            Color.green.ignoresSafeArea()
+            ChatView(messages: viewModel.messages, chatType: .conversation, replyMode: .answer) { draft in
+                viewModel.send(draft: draft, replyToMessage: replyToMessage)
+                replyToMessage = nil
             }
+        messageBuilder: { message, positionInUserGroup, positionInCommentsGroup, showContextMenuClosure, messageActionClosure, showAttachmentClosure in
+            ZStack {
+                Color.wbFontBG.ignoresSafeArea()
+                VStack {
+                    if message.user.id == "1" {
+                        HStack {
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 10) {
+                                if let replyMessage = message.replyMessage {
+                                    RepliedMessage(text: replyMessage.text)
+                                }
+                                SentMessageView(message: message)
+                            }
+                            .padding(.all, 10)
+                            .background(Rectangle().fill(.wbDefaultPurple))
+                            .foregroundStyle(.wbWhite)
+                            .cornerRadius(10, corners: [.topLeft, .topRight, .bottomLeft])
+                        }
+                    } else {
+                        HStack {
+                            VStack(alignment: .trailing, spacing: 10) {
+                                if let replyMessage = message.replyMessage {
+                                    RepliedMessage(text: replyMessage.text)
+                                }
+                                RecievedMessageView(message: message)
+                            }
+                            .padding(.all, 10)
+                            .background(Rectangle().fill(.wbFontBG2))
+                            .foregroundColor(.wbFont)
+                            .cornerRadius(10, corners: [.topLeft, .topRight, .bottomRight])
+                            Spacer()
+                        }
+                    }
+                }
+                .padding(.vertical, 12)
+                .padding(.horizontal, 16)
+            }
+        }
+        inputViewBuilder: { textBinding, attachments, inputViewState, inputViewStyle, inputViewActionClosure, dismissKeyboardClosure in
+            InputView(textBinding: textBinding,
+                      replyMessage: replyToMessage,
+                      plusAction: { inputViewActionClosure(.photo) },
+                      sendAction: { inputViewActionClosure(.send) },
+                      cancelAction: { replyToMessage = nil }
+            )
+            .padding(.top, 10)
+            .background(.wbFontBG2)
+            .padding(.top, -10)
+        }
+        messageMenuAction: { (action: ActionChat, defaultActionClosure, message) in
+            switch action {
+            case .reply:
+                replyToMessage = message.toReplyMessage()
+            case .delete:
+                // TODO: add deletion logic
+                print("delete message")
+            }
+        }
+        .enableLoadMore(pageSize: 3) { message in
+            viewModel.loadMoreMessage(before: message)
+        }
+        .messageUseMarkdown(messageUseMarkdown: true)
+        .onAppear(perform: viewModel.onStart)
+        .onDisappear(perform: viewModel.onStop)
+        }
     }
 }
 
 #Preview {
-    PersonalChatView(contact: Contact(id: 1,
-                                     firstName: "Anna",
-                                     lastName: "Lisichkina",
-                                     lastVisit: Date(),
-                                      imageName: nil,
-                                      isStory: false,
-                                      isOnline: false
-                                    )
-                     )
+    PersonalChatView(title: "test")
 }

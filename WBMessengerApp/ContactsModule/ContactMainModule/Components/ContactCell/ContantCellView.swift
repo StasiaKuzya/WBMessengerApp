@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContantCellView: View {
-    var contact: Contact
+    var contact: MockUser
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
@@ -77,7 +77,7 @@ struct ContantCellView: View {
 }
 
 #Preview {
-    ContantCellView(contact: Contact(id: 1,
+    ContantCellView(contact: MockUser(id: "12",
                                      firstName: "Anna",
                                      lastName: "Lisichkina",
                                      lastVisit: Date(),

@@ -9,18 +9,13 @@ import SwiftUI
 import Combine
 
 struct ContactsView: View {
-    @Binding var contactPath: [Contact]
+    @Binding var contactPath: [MockUser]
     @State var contactSearch = ""
     @State private var cancellables: Set<AnyCancellable> = []
-    @State private var contacts: [Contact] = [
-        .init(id: 1, firstName: "John", lastName: "Doe", lastVisit: Date(), imageName: nil, isStory: false, isOnline: false),
-        .init(id: 2, firstName: "Jane", lastName: "Smith", lastVisit: Date(), imageName: nil, isStory: false, isOnline: true),
-        .init(id: 3, firstName: "Janetta", lastName: "Tsmithova", lastVisit: Date(), imageName: nil, isStory: true, isOnline: false),
-        .init(id: 4, firstName: "Alice", lastName: "Johnson", lastVisit: Date(), imageName: nil, isStory: true, isOnline: true),
-        .init(id: 5, firstName: "Alex", lastName: "John", lastVisit: Date(), imageName: "https://kartinki.pics/uploads/posts/2022-05/1652216537_3-kartinkin-net-p-rik-i-morti-kartinki-na-avu-3.jpg", isStory: false, isOnline: false)
-    ]
+    @State private var contacts: [MockUser] = []
+    private let mockChatData = MockChatData()
     
-    var filteredContacts: [Contact] {
+    var filteredContacts: [MockUser] {
         if contactSearch.isEmpty {
             return contacts
         } else {
@@ -31,7 +26,7 @@ struct ContactsView: View {
         }
     }
     
-    init(contactPath: Binding<[Contact]>) {
+    init(contactPath: Binding<[MockUser]>) {
         self._contactPath = contactPath
         DataManager.shared.saveContactCount(contacts.count)
     }
@@ -56,10 +51,11 @@ struct ContactsView: View {
         .padding(.horizontal, 24)
         .padding(.bottom, 1)
         .background(Color.wbFontBG2)
-        .navigationDestination(for: Contact.self) { contact in
-            PersonalChatView(contact: contact)
+        .navigationDestination(for: MockUser.self) { contact in
+            PersonalChatNavView(contact: contact)
         }
         .onAppear {
+            fetcMockhContacts() // TODO: change mock on real whem back is ready
             fetchContacts()
         }
     }
@@ -76,10 +72,14 @@ struct ContactsView: View {
             })
             .store(in: &cancellables)
     }
+    
+    private func fetcMockhContacts() {
+        contacts = [mockChatData.john, mockChatData.jane, mockChatData.janetta, mockChatData.alice, mockChatData.alex]
+    }
 }
 
 #Preview {
-    ContactsView(contactPath: .constant([Contact(id: 1,
+    ContactsView(contactPath: .constant([MockUser(id: "2",
                                                  firstName: "Anna",
                                                  lastName: "Lisichkina",
                                                  lastVisit: Date(),
